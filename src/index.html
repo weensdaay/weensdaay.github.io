@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  <meta name="theme-color" content="#efede6">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="{{origin}}/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="WENSDAY">
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:description" content="{{description}}">
+  <meta property="og:url" content="{{origin}}/">
+  <meta property="og:image" content="{{origin}}/assets/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="preload" href="./assets/manrope.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="./assets/portrait.webp" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <svg class="svg-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 3v17m-7-7 7 7 7-7"/></symbol>
+    <symbol id="i-telegram" viewBox="0 0 24 24"><path d="m3 11 18-7-4 16-6-5-4 2 1-6 9-4-7 7"/></symbol>
+    <symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3Z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+    <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M14 3v13.5a4.5 4.5 0 1 1-4-4.47M14 3c0 4 3 6 6 6"/></symbol>
+    <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13M9 8l12-2"/><ellipse cx="6" cy="18" rx="3" ry="3"/><ellipse cx="18" cy="16" rx="3" ry="3"/></symbol>
+    <symbol id="i-spotify" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M6 9c4-2 8-1.5 12 .5M7 12.5c3-1.5 6.5-1 10 .5M8 16c2.5-1 5-.5 8 .5"/></symbol>
+    <symbol id="i-star" viewBox="0 0 40 40"><path fill="currentColor" stroke="none" d="m20 0 3.3 13.1L35 5l-8.1 11.7L40 20l-13.1 3.3L35 35l-11.7-8.1L20 40l-3.3-13.1L5 35l8.1-11.7L0 20l13.1-3.3L5 5l11.7 8.1Z"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5c-3-2-6-2-10-1v15c4-1 7-1 10 1 3-2 6-2 10-1V4c-4-1-7-1-10 1v15"/></symbol>
+  </svg>
+
+  <header class="site-header wrap">
+    <a class="monogram" href="#" aria-label="WENSDAY — наверх">W<span>↗</span></a>
+    <nav aria-label="Основная навигация">
+      <a href="#worlds">Мои миры</a>
+      <a href="#music">Музыка</a>
+      <a href="#projects">Проекты</a>
+    </nav>
+    <button class="motion-toggle" type="button" aria-pressed="false" aria-label="Остановить анимацию" title="Остановить анимацию"><span class="motion-dot" aria-hidden="true"></span><span class="motion-label">В движении</span></button>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="masthead" aria-label="WENSDAY"><span>WENSDAY</span><svg class="masthead-star" aria-hidden="true"><use href="#i-star"/></svg></div>
+      <div class="masthead-caption"><span>АНДРЕЙ СЕРЕДА · @WEENSDAAY</span><span>ОДИН ЧЕЛОВЕК. МНОГО МИРОВ.</span></div>
+      <div class="hero-main">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="status-dot"></span> ВСЕГДА ЛЮБОПЫТНО</span>
+          <h1 id="hero-title">Понимать<br>больше.<br><em>Видеть дальше.</em></h1>
+          <p class="hero-description">От бесконечности космоса<br class="desktop-break"> до дороги без плана.<br> Исследую. Снимаю. Создаю.</p>
+          {{telegram-hero}}
+          <a class="hero-explore text-link" href="#worlds">Выбрать свой мир <svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
+        </div>
+        <div class="hero-art" aria-label="Фотографии Андрея: закат, путешествия, мотоцикл">
+          <div class="orbit orbit-one" aria-hidden="true"></div><div class="orbit orbit-two" aria-hidden="true"></div>
+          <span class="art-note note-top" aria-hidden="true">чуть больше, чем блог.</span>
+          <figure class="snapshot snapshot-desert"><img src="./assets/desert.webp" width="480" height="640" alt="Андрей на квадроцикле в пустыне" decoding="async"><figcaption>ГДЕ-ТО ПО ПУТИ ↗</figcaption></figure>
+          <figure class="snapshot snapshot-portrait"><img src="./assets/portrait.webp" width="480" height="640" alt="Андрей на фоне золотого заката у океана" fetchpriority="high"><figcaption><span>ЖИТЬ. ЗАПОМИНАТЬ.</span><span>01 / ∞</span></figcaption></figure>
+          <figure class="snapshot snapshot-night"><img src="./assets/night-ride.webp" width="480" height="640" alt="Ночная поездка на мотоцикле" decoding="async"><figcaption>БЕЗ ЛИШНЕГО ШУМА</figcaption></figure>
+          <div class="round-sticker" aria-hidden="true"><span>WHY<br>NOT?</span><svg><use href="#i-star"/></svg></div>
+          <span class="art-coordinate" aria-hidden="true">ЗДЕСЬ И СЕЙЧАС<br>↳ BALI, EARTH</span>
+          <svg class="hand-arrow" viewBox="0 0 100 70" aria-hidden="true"><path d="M3 18C49-7 100 7 64 38 38 62 8 37 25 30c18-8 39 4 58 27m-17-3 18 5-1-18"/></svg>
+        </div>
+      </div>
+      <div class="hero-bottom"><span>НАУКА / ЖИЗНЬ / ТВОРЧЕСТВО</span><a href="#worlds" aria-label="Дальше: мои миры"><span>ЛИСТАЙ, ТУТ ИНТЕРЕСНО</span><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a></div>
+    </section>
+
+    <section class="worlds wrap section-space" id="worlds" aria-labelledby="worlds-title">
+      <div class="section-heading reveal"><span class="eyebrow">01 / ВЫБЕРИ НАПРАВЛЕНИЕ</span><h2 id="worlds-title">Один я.<br><span class="muted">Два взгляда на мир.</span></h2><p>Иногда хочется разобраться.<br>Иногда — просто отправиться в путь.</p></div>
+      <nav class="world-jumps" aria-label="Направления творчества"><a href="#science">Научпоп <span aria-hidden="true">↓</span></a><a href="#life">Путешествия и жизнь <span aria-hidden="true">↓</span></a></nav>
+      <div class="world-grid">
+        <article class="world-card science-card reveal" id="science">
+          <div class="world-visual science-visual">
+            <div class="world-visual-top"><span>НАУЧПОП</span><span>01 / 02</span></div>
+            <div class="cosmos" aria-hidden="true"><div class="cosmos-ring ring-a"></div><div class="cosmos-ring ring-b"></div><div class="cosmos-ring ring-c"></div><div class="planet"></div><div class="satellite"></div><span class="math-label">∞</span><span class="math-small">а что, если?</span></div>
+            <div class="world-visual-bottom"><span>БОЛЬШИЕ ВОПРОСЫ.<br>ЧЕЛОВЕЧЕСКИЙ ЯЗЫК.</span><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></div>
+          </div>
+          <div class="world-content"><div class="world-title"><h3>Мир в голове</h3><span aria-hidden="true">↗</span></div><p>Космос, числа и вещи, которые<br>сложнее, чем кажутся. Разбираемся вместе.</p><div class="social-links">{{science-links}}</div></div>
+        </article>
+        <article class="world-card life-card reveal" id="life">
+          <div class="world-visual life-visual">
+            <img src="./assets/desert.webp" width="480" height="640" alt="Путешествие по песчаным дюнам на квадроцикле" loading="lazy" decoding="async">
+            <div class="world-visual-top"><span>ПУТЕШЕСТВИЯ И ЖИЗНЬ</span><span>02 / 02</span></div>
+            <span class="life-script" aria-hidden="true">всё только<br>начинается.</span>
+            <div class="world-visual-bottom"><span>БЕЗ ГОТОВОГО СЦЕНАРИЯ.<br>С ОТКРЫТЫМИ ГЛАЗАМИ.</span><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></div>
+          </div>
+          <div class="world-content"><div class="world-title"><h3>Мир вокруг</h3><span aria-hidden="true">↗</span></div><p>Дороги, острова, случайные встречи.<br>Моя жизнь по ту сторону монтажа.</p><div class="social-links">{{life-links}}</div></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="music-section section-space" id="music" aria-labelledby="music-title">
+      <div class="wrap music-layout">
+        <div class="music-art reveal" aria-hidden="true"><div class="record-sleeve"><span>ANDRY<br>WEDNESDAY</span><div class="sleeve-glow"></div><span class="sleeve-caption">ЗВУК / ЧУВСТВО / МОМЕНТ</span></div><div class="vinyl"><div class="vinyl-label"><span>AW</span><i></i><small>SIDE A</small></div></div><span class="music-sticker">СВОЙ<br>РИТМ.</span></div>
+        <div class="music-copy reveal"><span class="eyebrow">02 / В ДРУГОМ РИТМЕ</span><h2 id="music-title">Иногда проще<br><em>музыкой.</em></h2><p class="artist-name">Andry Wednesday</p><p class="music-description">Ещё одна сторона меня.<br>Выбирай, где тебе удобнее слушать.</p><div class="music-links" aria-label="Музыкальные площадки">{{music-links}}</div></div>
+      </div>
+    </section>
+
+    <section class="projects wrap section-space" id="projects" aria-labelledby="projects-title">
+      <div class="section-heading reveal"><span class="eyebrow">03 / ИДЕИ СТАНОВЯТСЯ РЕАЛЬНЫМИ</span><h2 id="projects-title">За пределами<br><span class="muted">контента.</span></h2><p>То, что хочется не только рассказать.<br>Но и сделать.</p></div>
+      <div class="project-grid">
+        <article class="project-card hundred-project reveal"><div class="project-art helmet-art"><img src="./assets/helmet.webp" width="900" height="1200" alt="Расписанный вручную шлем The Hundred 000/100: розовое и фиолетовое граффити" loading="lazy" decoding="async"><span class="project-category">ART / ОБЪЕКТЫ</span><span class="helmet-number" aria-hidden="true">000—100</span></div><div class="project-info">{{project-hundred}}<p>Одна история о свободе стиля.<br>Рассказанная через шлемы.</p></div></article>
+        <article class="project-card continuum-project reveal"><div class="project-art continuum-art" aria-hidden="true"><span class="project-category">APP / ФОКУС</span><div class="continuum-orbit"><i></i><i></i><i></i><span>c.</span></div><span class="continuum-caption">MAKE ROOM<br>FOR WHAT MATTERS.</span></div><div class="project-info">{{project-continuum}}<p>Пространство для целей.<br>Ссылка на приложение появится здесь.</p></div></article>
+        <article class="project-card bali-project reveal"><div class="project-art bali-art"><img src="./assets/penida.webp" width="1000" height="667" alt="Скалы и бирюзовый океан у пляжа Келингкинг, Нуса-Пенида" loading="lazy" decoding="async"><span class="project-category">TRAVEL / BALI</span><span class="bali-script" aria-hidden="true">Bali,<br>with love.</span></div><div class="project-info">{{project-bali}}<p>Остров, который стал<br>чем-то большим, чем точка на карте.</p></div></article>
+      </div>
+      <aside class="books-note reveal" aria-label="Книги Андрея Середы"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg><div class="books-intro"><span>Кое-что осталось на бумаге.</span><span>Андрей Середа · книги</span></div><div class="book-links">{{book-links}}</div></aside>
+    </section>
+
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer-top"><span class="eyebrow">РАД, ЧТО ТЫ ЗДЕСЬ.</span><span class="eyebrow">ПРОДОЛЖЕНИЕ СЛЕДУЕТ ↗</span></div>
+        <div class="footer-main"><h2>Увидимся<br><em>где-нибудь.</em></h2>{{telegram-footer}}</div>
+        <div class="contact-row" id="contact"><div><span class="eyebrow">ЕСТЬ ИДЕЯ?</span><p>Сотрудничество и реклама</p></div><a class="contact-email" href="{{contact-mailto}}"><span>{{contact-email}}</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><button type="button" class="copy-email" data-copy-email="{{contact-email}}" aria-label="Скопировать почту для сотрудничества">Копировать</button></div>
+        <div class="footer-bottom"><a href="#" class="footer-wordmark" aria-label="WENSDAY — наверх">WENSDAY<svg aria-hidden="true"><use href="#i-star"/></svg></a><span>© 2026 Андрей Середа</span><a class="back-top" href="#">Наверх ↑</a></div>
+      </div>
+    </footer>
+  </main>
+
+  <div class="mobile-dock" aria-label="Быстрый доступ" inert><a href="#worlds">Все сети <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>{{telegram-mobile}}</div>
+  <dialog id="soon-dialog" aria-labelledby="soon-title" aria-describedby="soon-description"><button class="dialog-close" type="button" aria-label="Закрыть"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button><span class="eyebrow">ПРОДОЛЖЕНИЕ СЛЕДУЕТ</span><svg class="dialog-star" aria-hidden="true"><use href="#i-star"/></svg><h2 id="soon-title">Скоро здесь.</h2><p id="soon-description">Эта история ещё готовится.<br>Загляни в уже открытые миры.</p><button class="dialog-action" type="button">Хорошо, буду ждать ↗</button></dialog>
+  <div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

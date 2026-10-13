@@ -1,0 +1,12 @@
+{
+  "name": "weensdaay-universe",
+  "private": true,
+  "version": "1.0.0",
+  "description": "WENSDAY — personal creative universe. Static, dependency-free website.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/site.test.mjs",
+    "preview": "node scripts/serve.mjs"
+  },
+  "engines": { "node": ">=20" }
+}
