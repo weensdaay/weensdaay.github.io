@@ -29,6 +29,7 @@ const project = (key, label) => config.projects[key]
   ? `<a class="project-link" ${external(config.projects[key])}><span>${label}</span>${icon('arrow')}</a>`
   : `<button class="project-link" ${soon(label)}><span>${label}</span><span class="soon-label">скоро ${icon('arrow')}</span></button>`;
 
+const platformInfo = {youtube:['youtube','YouTube'],shorts:['youtube','YouTube Shorts'],tiktok:['tiktok','TikTok'],instagram:['instagram','Instagram · Reels']};
 const gallery = (items, {label, classes='', interval=6000, controls=true, eager=false, offset=0, captions=true}={}) => {
   if (!items.length) return '';
   const ordered = [...items.slice(offset), ...items.slice(0,offset)];
@@ -36,8 +37,10 @@ const gallery = (items, {label, classes='', interval=6000, controls=true, eager=
     <div class="media-stage">${ordered.map((item,index) => {
       if (item.url) validUrl(item.url);
       const tag = item.url ? 'a' : 'div';
+      const platform = platformInfo[item.platform];
       return `<${tag} class="media-slide${index === 0 ? ' is-active' : ''}" ${item.url ? external(item.url) : ''} ${index ? 'aria-hidden="true" inert' : ''} data-title="${esc(item.title)}">
         <img ${index ? 'data-src' : 'src'}="./${esc(item.src)}" width="${item.width || 720}" height="${item.height || 960}" alt="${esc(item.alt)}" ${index ? '' : eager ? '' : 'loading="lazy"'} decoding="async">
+        ${platform ? `<span class="slide-platform">${icon(platform[0])}${platform[1]}</span>` : ''}
         ${captions ? `<span class="slide-copy"><span>${esc(item.title)}</span>${item.url ? icon('arrow') : ''}</span>` : ''}
       </${tag}>`;
     }).join('')}</div>
@@ -56,7 +59,8 @@ const quickLinks = [
   {name:'Bali Trips',icon:'arrow',url:config.projects.bali,detail:'Путешествия по Бали'},
   {name:'Сотрудничество и реклама',icon:'mail',url:mailto,detail:config.contact.email},
   ...media.albums.map(item => ({...item,name:item.title,icon:'music',detail:'Andry Wednesday · релиз'})),
-  ...media.science.map(item => ({...item,name:item.title,icon:'youtube',detail:'Смотреть · научпоп'})),
+  ...media.science.map(item => ({...item,name:item.title,icon:item.platform === 'tiktok' ? 'tiktok' : 'youtube',detail:item.platform === 'tiktok' ? 'TikTok · научпоп' : 'YouTube · научпоп'})),
+  ...media.reels.map(item => ({...item,name:item.title,icon:'instagram',detail:'Instagram · путешествия'})),
   ...media.vlogs.map(item => ({...item,name:item.title,icon:'youtube',detail:'Смотреть · влог'}))
 ];
 // A mixed order without JavaScript, reshuffled once per visit in the browser.
@@ -80,6 +84,7 @@ const tokens = {
   'hero-right': gallery(media.photos.filter((_,index)=>index%3===2),{label:'За кадром',classes:'polaroid-gallery',interval:8600,controls:false,eager:true,captions:false}),
   'science-gallery': gallery(media.science,{label:'Видео о науке',classes:'video-gallery',interval:6500}),
   'life-gallery': gallery(media.photos,{label:'Путешествия и жизнь',classes:'travel-gallery',offset:1,interval:7200,controls:false,captions:false}),
+  'reel-gallery': gallery(media.reels,{label:'Instagram — путешествия и Reels',classes:'video-gallery reel-gallery',interval:7600}),
   'vlog-gallery': gallery(media.vlogs,{label:'YouTube — влоги',classes:'video-gallery vlog-gallery',interval:7000}),
   'album-gallery': gallery(media.albums,{label:'Релизы Andry Wednesday',classes:'album-gallery',interval:6700}),
   'science-links': social(config.science), 'life-links': social(config.life),

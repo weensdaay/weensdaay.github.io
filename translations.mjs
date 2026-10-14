@@ -1,5 +1,37 @@
 // English copy for the static /en/ page. Keep release and channel identities intact.
 export default {
+  "Перегрузка — это не скорость":"G-force is not speed",
+  "Почему самолёты не летают над Тихим океаном?":"Why don't planes fly over the Pacific?",
+  "Какая температура в космосе?":"What is the temperature in space?",
+  "Человек был создан для бега":"Humans were made to run",
+  "Почему запретили дирижабли?":"Why were airships banned?",
+  "Лето, которое изменило всё":"The summer that changed everything",
+  "100 000 шагов по Минску":"100,000 steps around Minsk",
+  "Пленэр на Минском море":"Painting outdoors at the Minsk Sea",
+
+  "Будущее нашей галактики":"The future of our galaxy",
+  "Обложка TikTok WENSDAY: Будущее нашей галактики":"WENSDAY TikTok cover: The future of our galaxy",
+  "Почему время течёт?":"Why does time flow?",
+  "Обложка TikTok WENSDAY: Почему время течёт?":"WENSDAY TikTok cover: Why does time flow?",
+  "Внутри чёрной дыры":"Inside a black hole",
+  "Обложка TikTok WENSDAY: Внутри чёрной дыры":"WENSDAY TikTok cover: Inside a black hole",
+
+  "Дорога в горы":"Into the mountains",
+  "Каменная дорожка с ограждением среди зелёных гор":"A stone path and railing surrounded by green mountains",
+  "Закат над скалами":"Sunset over the cliffs",
+  "Розово-фиолетовый закат над скалистым берегом и дорожкой":"A pink and purple sunset over a rocky coast and coastal path",
+  "Зелень и водопады":"Greenery and waterfalls",
+  "Высокие водопады среди густой тропической зелени":"Tall waterfalls surrounded by dense tropical greenery",
+  "Океан на закате":"Ocean at sunset",
+  "Золотой закат над океаном и силуэт всадника у берега":"A golden ocean sunset with a horseback rider near the shore",
+  "Над побережьем":"Above the coast",
+  "WENSDAY летит на параплане с инструктором над океаном и скалами":"WENSDAY paragliding with an instructor above the ocean and cliffs",
+
+  'Сотрудничество':'Collaborations',
+  'Места и моменты. В движении.':'Places and moments. In motion.',
+  'Instagram — путешествия и Reels':'Instagram — travel & Reels',
+  'Instagram · путешествия':'Instagram · travel',
+
   "WENSDAY на бирюзовом мотоцикле у океана":"WENSDAY on a turquoise motorcycle by the ocean",
   "К океану":"Ocean bound",
   "WENSDAY на каменной лестнице балийского храма":"WENSDAY on the stone steps of a Balinese temple",

@@ -51,3 +51,32 @@ https://www.litres.ru/author/andrey-sereda/ — автор с двумя кни�
   - `hero-jungle-pool.webp`: https://www.instagram.com/weensdaay/p/DZnHMJvk_Pb/
   - `hero-coast.webp`: https://www.instagram.com/weensdaay/p/DXb5Vcdk_2n/
   - `hero-mirror.webp`: https://www.instagram.com/weensdaay/p/DasP41SkwKo/
+
+## Мобильные медиа, 14 октября 2026
+
+Подборка Instagram Reels: точные адреса и обложки проверены на публичной вкладке профиля. Заголовки описывают кадры. Полное видео и аудио Instagram требует открыть после входа, поэтому их содержимое не проверено.
+
+- `assets/reel-mountain-road.webp`: https://www.instagram.com/weensdaay/reel/DeWX9GyTAM9/
+- `assets/reel-purple-sunset.webp`: https://www.instagram.com/weensdaay/reel/DeJ-Y6NTWxb/
+- `assets/reel-waterfall.webp`: https://www.instagram.com/weensdaay/reel/DdY6i18TY-D/
+- `assets/reel-golden-ocean.webp`: https://www.instagram.com/weensdaay/reel/DdB7yZwTp6y/
+- `assets/reel-paragliding.webp`: https://www.instagram.com/weensdaay/reel/DcicrrATIUT/
+
+Превью влога о поездке с девушками в Куала-Лумпур исключено из подборки по просьбе автора о нейтральных материалах.
+
+TikTok: научпоп с публичной ленты @weensdaay. Прямые ссылки и обложки просмотрены 14 октября 2026.
+- `assets/more-tiktok-andromeda.webp`: https://www.tiktok.com/@weensdaay/video/7142417103327333637
+- `assets/more-tiktok-time.webp`: https://www.tiktok.com/@weensdaay/video/7286814199450209541
+- `assets/more-tiktok-black-hole.webp`: https://www.tiktok.com/@weensdaay/video/7530531722694282501
+
+Дополнительные YouTube: точные ссылки, названия и обложки подтверждены публичными страницами каналов. Отбор по теме и превью; полные ролики не просматривались. Названия на сайте сокращены редакционно.
+- `assets/more-science-overload.webp`: https://www.youtube.com/shorts/rco0frGbd1I
+- `assets/more-science-pacific.webp`: https://www.youtube.com/shorts/BUklWmVXHrQ
+- `assets/more-science-temperature.webp`: https://www.youtube.com/shorts/pMyiP4xkkFY
+- `assets/more-science-running.webp`: https://www.youtube.com/shorts/sqRm2cSfhIw
+- `assets/more-science-airships.webp`: https://www.youtube.com/shorts/T5jYsfef4m8
+- `assets/more-vlog-summer.webp`: https://www.youtube.com/watch?v=h1j-udxFGE4
+- `assets/more-vlog-minsk.webp`: https://www.youtube.com/watch?v=gHY6KgAizMI
+- `assets/more-vlog-minsk-sea.webp`: https://www.youtube.com/watch?v=FjnBndpCJBY
+
+`manrope.woff2` — тот же локальный Manrope из `manrope.ttf`, без изменения глифов, сжат fontTools в WOFF2 для уменьшения загрузки на мобильных устройствах.
