@@ -2,11 +2,13 @@
 
 An independent Cloudflare Worker and D1 database receive a small anonymous event batch from the GitHub Pages website. The owner's 67 Control app reads aggregates through a separate bearer-protected route. This does not provide access to social accounts or the website repository. No account credentials, IP addresses, full user agents, full referrers, or arbitrary URLs are written to D1.
 
-This folder is deployable source, **not evidence that a service has been deployed**. `wrangler.json` intentionally contains a database ID placeholder until provisioning is authorized. The browser tracker must remain disabled until a real service is verified. Nothing here turns on paid Cloudflare plans.
+The collector was deployed on 2026-10-14 at `https://wensday-analytics.zendard78.workers.dev`, with a dedicated `wensday-analytics` D1 database and the daily retention cron. The live access checks confirmed `401` without the read key or with an incorrect key, `403` for a foreign browser origin, the trusted site's `204` preflight, and a private `200` aggregate report without browser CORS access. No synthetic visits were inserted. The WENSDAY connection in 67 Control stores its read key in macOS Keychain. The public site configuration contains only the ingestion URL. Nothing here enables a paid Cloudflare plan.
 
 ## Setup
 
-Use Wrangler 4.36 or newer. Authenticate with `wrangler whoami` before making changes. In this directory, provision a dedicated `wensday-analytics` D1 database, replace only `database_id`, and apply `migrations/0001_events.sql` with Wrangler migrations. The configured rate limiter namespace must be unique within the account; change `671410` if already used.
+Use Wrangler 4.36 or newer. Authenticate with `wrangler whoami` before making changes and confirm the configured account. The database is already provisioned in `wrangler.json`; reuse it rather than creating a second copy. Apply future migrations with Wrangler. The configured rate limiter namespace `671410` belongs to this collector and must remain unique within the account.
+
+Wrangler 4.150 requires both `workers:write` and `workers_scripts:write` for deployment and the existing workers.dev subdomain, plus `d1:write`, `account:read` and `user:read`. The login uses `--use-keyring`; Cloudflare credentials are encrypted locally with their encryption key in macOS Keychain. Do not broaden to Wrangler's full default scope set. No Cloudflare administrative credential belongs in this repository or in 67 Control.
 
 Set two independently generated random secrets of at least 32 characters through Wrangler secret input:
 

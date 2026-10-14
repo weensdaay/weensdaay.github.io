@@ -1,15 +1,18 @@
 {
   "name": "wensday-analytics",
+  "account_id": "fb52ca7f0c95f59791e8e2e872704a11",
   "main": "worker.mjs",
   "compatibility_date": "2026-10-14",
   "workers_dev": true,
   "send_metrics": false,
-  "observability": { "enabled": false },
+  "observability": {
+    "enabled": false
+  },
   "d1_databases": [
     {
       "binding": "DB",
       "database_name": "wensday-analytics",
-      "database_id": "REPLACE_AFTER_PROVISIONING",
+      "database_id": "b93418ad-133b-4448-a518-3692d84842c5",
       "migrations_dir": "migrations"
     }
   ],
@@ -17,8 +20,15 @@
     {
       "name": "INGEST_LIMITER",
       "namespace_id": "671410",
-      "simple": { "limit": 60, "period": 60 }
+      "simple": {
+        "limit": 60,
+        "period": 60
+      }
     }
   ],
-  "triggers": { "crons": ["17 4 * * *"] }
+  "triggers": {
+    "crons": [
+      "17 4 * * *"
+    ]
+  }
 }
