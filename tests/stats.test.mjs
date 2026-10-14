@@ -43,6 +43,15 @@ test('period growth uses matching UTC dates and suppresses counter corrections',
   assert.equal(makeSnapshot(historyWith([sample(8,100),sample(0,500)]),now).accounts[0].week.value,null);
   assert.equal(makeSnapshot(historyWith([sample(7,500),sample(3,200),sample(0,900)]),now).accounts[0].week.status,'adjusted');
 });
+test('compact growth labels distinguish collecting, unavailable and measured zero',()=>{
+  const collecting=makeSnapshot(historyWith([sample(0,500)]),now);
+  assert.equal(snapshotText(collecting,'ru',Date.parse(now))['week-display'],'Копим историю');
+  assert.equal(snapshotText(collecting,'en',Date.parse(now))['year-display'],'Building history');
+  assert.equal(snapshotText(collecting,'en',Date.parse(now)+3*DAY)['week-display'],'Unavailable');
+  const measured=makeSnapshot(historyWith([sample(7,500),sample(0,500)]),now);
+  assert.equal(snapshotText(measured,'en',Date.parse(now))['week-display'],'+0');
+  assert.equal(snapshotText(makeSnapshot(emptyHistory(),now),'ru',Date.parse(now))['week-display'],'Нет данных');
+});
 test('failed refreshes retain the observation date, with old numbers excluded from totals',()=>{
   const data=makeSnapshot(historyWith([sample(7,100),sample(0,500)]),now);
   assert.equal(summary(data,'views',Date.parse(now)).value,500);

@@ -40,6 +40,10 @@ export function snapshotText(data, language = 'ru', now = Date.now()) {
     fields[field] = formatCount(metric.value,metric.approximate,language);
     fields[`${field}-coverage`] = metric.coverage ? t(`По ${metric.coverage} из ${accountIds.length} аккаунтов`,`Across ${metric.coverage} of ${accountIds.length} accounts`) : t('Пока недостаточно данных','Not enough public data yet');
     if (['week','year'].includes(field) && !metric.coverage && data.accounts.some(item=>item[field].status === 'collecting')) fields[`${field}-coverage`] = t('Накапливается история','Building a daily history');
+    if (['week','year'].includes(field)) {
+      const collecting = data.accounts.some(item => item[field].status === 'collecting' && item.views && now-Date.parse(item.views.observedAt)<=DAY*2);
+      fields[`${field}-display`] = metric.coverage ? '+'+fields[field] : collecting ? t('Копим историю','Building history') : t('Нет данных','Unavailable');
+    }
   }
   fields.checked = t('Проверено ','Checked ') + date(data.checkedAt);
   fields.freshness = now-Date.parse(data.checkedAt)>DAY*2 ? t('Снимок устарел · ждём обновления','Older snapshot · awaiting an update') : t('Открытые данные · ежедневная проверка','Public data · checked daily');
