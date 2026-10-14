@@ -8,6 +8,9 @@
   <meta name="theme-color" content="#efede6">
   <meta name="color-scheme" content="light">
   <link rel="canonical" href="https://weensdaay.github.io/">
+  <link rel="alternate" hreflang="ru" href="https://weensdaay.github.io/">
+  <link rel="alternate" hreflang="en" href="https://weensdaay.github.io/en/">
+  <link rel="alternate" hreflang="x-default" href="https://weensdaay.github.io/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:site_name" content="WENSDAY">
@@ -22,6 +25,7 @@
   <link rel="preload" href="./assets/manrope.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="./assets/portrait.webp" as="image" fetchpriority="high">
   <link rel="stylesheet" href="./styles.css">
+  <script src="./locale.js" defer></script>
   <script src="./app.js" defer></script>
 </head>
 <body>
@@ -37,16 +41,20 @@
     <symbol id="i-spotify" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M6 9c4-2 8-1.5 12 .5M7 12.5c3-1.5 6.5-1 10 .5M8 16c2.5-1 5-.5 8 .5"/></symbol>
     <symbol id="i-star" viewBox="0 0 40 40"><path fill="currentColor" stroke="none" d="m20 0 3.3 13.1L35 5l-8.1 11.7L40 20l-13.1 3.3L35 35l-11.7-8.1L20 40l-3.3-13.1L5 35l8.1-11.7L0 20l13.1-3.3L5 5l11.7 8.1Z"/></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 6 9 7 9-7"/></symbol>
     <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5c-3-2-6-2-10-1v15c4-1 7-1 10 1 3-2 6-2 10-1V4c-4-1-7-1-10 1v15"/></symbol>
   </svg>
 
   <header class="site-header wrap">
     <a class="monogram" href="#" aria-label="WENSDAY — наверх">W<span>↗</span></a>
     <nav aria-label="Основная навигация">
-      <a href="#worlds">Мои миры</a>
+      <a href="#science"><span class="nav-full">Научно-познавательный контент</span><span class="nav-short">Научпоп</span></a>
+      <a href="#life">Путешествия</a>
       <a href="#music">Музыка</a>
       <a href="#projects">Проекты</a>
     </nav>
+    <a class="header-contact" href="mailto:comet-ode.9d@icloud.com?subject=WENSDAY%20%E2%80%94%20%D1%81%D0%BE%D1%82%D1%80%D1%83%D0%B4%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE%20%D0%B8%20%D1%80%D0%B5%D0%BA%D0%BB%D0%B0%D0%BC%D0%B0"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><span>Реклама и сотрудничество</span></a>
+    <nav class="language-switch" aria-label="Язык сайта"><a href="/?lang=ru" lang="ru" data-lang="ru" aria-label="Русский">RU</a><a href="/en/?lang=en" lang="en" data-lang="en" aria-label="English">EN</a></nav>
     <button class="motion-toggle" type="button" aria-pressed="false" aria-label="Остановить анимацию" title="Остановить анимацию"><span class="motion-dot" aria-hidden="true"></span><span class="motion-label">В движении</span></button>
   </header>
 
@@ -65,15 +73,55 @@
         <div class="hero-art" aria-label="Фотографии Андрея: закат, путешествия, мотоцикл">
           <div class="orbit orbit-one" aria-hidden="true"></div><div class="orbit orbit-two" aria-hidden="true"></div>
           <span class="art-note note-top" aria-hidden="true">чуть больше, чем блог.</span>
-          <figure class="snapshot snapshot-desert"><img src="./assets/desert.webp" width="480" height="640" alt="Андрей на квадроцикле в пустыне" decoding="async"><figcaption>ГДЕ-ТО ПО ПУТИ ↗</figcaption></figure>
-          <figure class="snapshot snapshot-portrait"><img src="./assets/portrait.webp" width="480" height="640" alt="Андрей на фоне золотого заката у океана" fetchpriority="high"><figcaption><span>ЖИТЬ. ЗАПОМИНАТЬ.</span><span>01 / ∞</span></figcaption></figure>
-          <figure class="snapshot snapshot-night"><img src="./assets/night-ride.webp" width="480" height="640" alt="Ночная поездка на мотоцикле" decoding="async"><figcaption>БЕЗ ЛИШНЕГО ШУМА</figcaption></figure>
+          <figure class="snapshot snapshot-desert"><div class="media-gallery polaroid-gallery" data-gallery data-interval="7400" role="group" aria-label="По пути" aria-roledescription="карусель">
+    <div class="media-stage"><div class="media-slide is-active"   data-title="Где-то по пути">
+        <img src="./assets/desert.webp" width="720" height="960" alt="Андрей на квадроцикле в пустыне"  decoding="async">
+
+      </div><div class="media-slide"  aria-hidden="true" inert data-title="На острове">
+        <img data-src="./assets/hero-temple.webp" width="480" height="640" alt="WENSDAY на каменной лестнице балийского храма"  decoding="async">
+
+      </div><div class="media-slide"  aria-hidden="true" inert data-title="Вдоль океана">
+        <img data-src="./assets/hero-coast.webp" width="480" height="640" alt="WENSDAY на чёрном мотоцикле у скалистого берега океана"  decoding="async">
+
+      </div></div>
+
+  </div><figcaption>ГДЕ-ТО ПО ПУТИ ↗</figcaption></figure>
+          <figure class="snapshot snapshot-portrait"><div class="media-gallery polaroid-gallery" data-gallery data-interval="6200" role="group" aria-label="Моменты моей жизни" aria-roledescription="карусель">
+    <div class="media-stage"><div class="media-slide is-active"   data-title="Жить. Запоминать.">
+        <img src="./assets/portrait.webp" width="720" height="960" alt="Андрей на фоне золотого заката у океана"  decoding="async">
+
+      </div><div class="media-slide"  aria-hidden="true" inert data-title="К океану">
+        <img data-src="./assets/hero-beach-ride.webp" width="480" height="640" alt="WENSDAY на бирюзовом мотоцикле у океана"  decoding="async">
+
+      </div><div class="media-slide"  aria-hidden="true" inert data-title="Без суеты">
+        <img data-src="./assets/hero-jungle-pool.webp" width="480" height="640" alt="WENSDAY отдыхает в бассейне среди пальм и зелёных холмов"  decoding="async">
+
+      </div></div>
+
+  </div><figcaption><span>ЖИТЬ. ЗАПОМИНАТЬ.</span><span>01 / ∞</span></figcaption></figure>
+          <figure class="snapshot snapshot-night"><div class="media-gallery polaroid-gallery" data-gallery data-interval="8600" role="group" aria-label="За кадром" aria-roledescription="карусель">
+    <div class="media-stage"><div class="media-slide is-active"   data-title="Без лишнего шума">
+        <img src="./assets/night-ride.webp" width="720" height="960" alt="Ночная поездка на мотоцикле"  decoding="async">
+
+      </div><div class="media-slide"  aria-hidden="true" inert data-title="Своя дорога">
+        <img data-src="./assets/hero-lake-road.webp" width="480" height="640" alt="WENSDAY на белом мотоцикле у горного озера"  decoding="async">
+
+      </div><div class="media-slide"  aria-hidden="true" inert data-title="Между поездками">
+        <img data-src="./assets/hero-mirror.webp" width="480" height="640" alt="WENSDAY делает снимок в большом зеркале, в светлой рубашке"  decoding="async">
+
+      </div></div>
+
+  </div><figcaption>БЕЗ ЛИШНЕГО ШУМА</figcaption></figure>
           <div class="round-sticker" aria-hidden="true"><span>WHY<br>NOT?</span><svg><use href="#i-star"/></svg></div>
           <span class="art-coordinate" aria-hidden="true">ЗДЕСЬ И СЕЙЧАС<br>↳ BALI, EARTH</span>
           <svg class="hand-arrow" viewBox="0 0 100 70" aria-hidden="true"><path d="M3 18C49-7 100 7 64 38 38 62 8 37 25 30c18-8 39 4 58 27m-17-3 18 5-1-18"/></svg>
         </div>
       </div>
       <div class="hero-bottom"><span>НАУКА / ЖИЗНЬ / ТВОРЧЕСТВО</span><a href="#worlds" aria-label="Дальше: мои миры"><span>ЛИСТАЙ, ТУТ ИНТЕРЕСНО</span><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a></div>
+      <section class="quick-links" aria-label="Все ссылки в одной ленте">
+        <div class="quick-heading"><span class="eyebrow">ВСЁ МОЁ. В ОДНОЙ ЛЕНТЕ.</span><div><span>Листай и выбирай</span><button type="button" data-quick-step="-1" aria-label="Листать ссылки назад">←</button><button type="button" data-quick-step="1" aria-label="Листать ссылки вперёд">→</button></div></div>
+        <div class="quick-viewport" tabindex="0" role="region" aria-label="Ссылки: можно листать в обе стороны"><div class="quick-track"><div class="quick-group"><a class="quick-chip" href="https://www.youtube.com/@weensdaay" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg><span><strong>YouTube · научпоп</strong><small>Научно-познавательный контент</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="quick-chip" href="mailto:comet-ode.9d@icloud.com?subject=WENSDAY%20%E2%80%94%20%D1%81%D0%BE%D1%82%D1%80%D1%83%D0%B4%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE%20%D0%B8%20%D1%80%D0%B5%D0%BA%D0%BB%D0%B0%D0%BC%D0%B0"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><span><strong>Сотрудничество и реклама</strong><small>comet-ode.9d@icloud.com</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="quick-chip" href="https://music.apple.com/ru/artist/andry-wednesday/1490428863" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-music"/></svg><span><strong>Apple Music</strong><small>Andry Wednesday · музыка</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="quick-chip" href="https://www.youtube.com/watch?v=mldj7qPBAIg" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg><span><strong>Тайланд… Всё пошло не по плану</strong><small>Смотреть · влог</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="quick-chip" href="https://www.litres.ru/author/andrey-sereda/" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg><span><strong>Книги на Литрес</strong><small>Андрей Середа · книги</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="quick-chip" href="https://www.youtube.com/@wensday3151" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg><span><strong>YouTube · архив · научпоп</strong><small>Научно-познавательный контент</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="quick-chip" href="https://music.apple.com/ru/album/%D0%B3%D0%B5%D1%80%D0%BE%D0%B9-%D1%82%D1%80%D0%B8%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8-single/1525013267" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-music"/></svg><span><strong>Герой трилогии</strong><small>Andry Wednesday · релиз</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="quick-chip" href="https://www.deezer.com/artist/92090752" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-music"/></svg><span><strong>Deezer</strong><small>Andry Wednesday · музыка</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="quick-chip" href="https://www.youtube.com/watch?v=VZ0voORIkGo" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg><span><strong>Гродно | Куда поехать в Беларуси? Что посмотреть в Гродно? Главный колхоз страны!</strong><small>Смотреть · влог</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><button class="quick-chip" type="button" data-soon="Continuum" aria-label="Continuum — скоро"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><span><strong>Continuum</strong><small>Пространство для целей</small></span><span class="soon-label">скоро</span></button><a class="quick-chip" href="https://www.tiktok.com/@bed1guy" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-tiktok"/></svg><span><strong>TikTok · BedGuy · жизнь</strong><small>Путешествия и личный блог</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="quick-chip" href="https://www.youtube.com/shorts/n1q-Cwdqrws" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg><span><strong>Наша земля 🌏 не круглой формы! #земля</strong><small>Смотреть · научпоп</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="quick-chip" href="https://audiomack.com/andry-wednesday" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-music"/></svg><span><strong>Audiomack</strong><small>Andry Wednesday · музыка</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="quick-chip" href="https://www.tiktok.com/@weensdaay" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-tiktok"/></svg><span><strong>TikTok · научпоп</strong><small>Научно-познавательный контент</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="quick-chip" href="https://music.apple.com/ru/album/ticket/1604042015" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-music"/></svg><span><strong>Ticket</strong><small>Andry Wednesday · релиз</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="quick-chip" href="https://music.youtube.com/channel/UCB7PPfULSbQjRlmmxXJETGA" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg><span><strong>YouTube Music</strong><small>Andry Wednesday · музыка</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="quick-chip" href="https://www.youtube.com/watch?v=sP9Ri2fdiXw" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg><span><strong>Отдых с девочками в Куала Лампур закончился трагедией...</strong><small>Смотреть · влог</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><button class="quick-chip" type="button" data-soon="Telegram" aria-label="Telegram — скоро"><svg class="icon" aria-hidden="true"><use href="#i-telegram"/></svg><span><strong>Telegram</strong><small>Главное место встречи</small></span><span class="soon-label">скоро</span></button><a class="quick-chip" href="https://www.instagram.com/weensdaay/" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg><span><strong>Instagram · жизнь</strong><small>Путешествия и личный блог</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="quick-chip" href="https://www.youtube.com/shorts/tSxqSzXGcvk" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg><span><strong>Это самое большое в мире число! #математика</strong><small>Смотреть · научпоп</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="quick-chip" href="https://tidal.com/artist/19237615" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-music"/></svg><span><strong>TIDAL</strong><small>Andry Wednesday · музыка</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="quick-chip" href="https://www.youtube.com/watch?v=rf4n0PwDb7M" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg><span><strong>Браславские озёра! Отдых в Беларуси! Браслав глазами туриста!</strong><small>Смотреть · влог</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><button class="quick-chip" type="button" data-soon="Bali Trips" aria-label="Bali Trips — скоро"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg><span><strong>Bali Trips</strong><small>Путешествия по Бали</small></span><span class="soon-label">скоро</span></button><a class="quick-chip" href="https://open.spotify.com/artist/5myuZ9VeAWlwbWLtC5dduE" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-spotify"/></svg><span><strong>Spotify</strong><small>Andry Wednesday · музыка</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="quick-chip" href="https://www.youtube.com/shorts/bYUP8R0kQf4" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg><span><strong>Почему раскладка на клавиатуре ⌨ именно такая?</strong><small>Смотреть · научпоп</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="quick-chip" href="https://music.mts.ru/artist/9084732" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-music"/></svg><span><strong>КИОН Музыка</strong><small>Andry Wednesday · музыка</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><button class="quick-chip" type="button" data-soon="Instagram" aria-label="Instagram — скоро"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg><span><strong>Instagram · научпоп</strong><small>Научно-познавательный контент</small></span><span class="soon-label">скоро</span></button><a class="quick-chip" href="https://music.apple.com/ru/album/%D0%BA%D1%82%D0%BE-ep/1524163191" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-music"/></svg><span><strong>Кто — EP</strong><small>Andry Wednesday · релиз</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="quick-chip" href="https://music.yandex.ru/album/20508373" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-music"/></svg><span><strong>Яндекс · Ticket</strong><small>Andry Wednesday · музыка</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="quick-chip" href="https://www.youtube.com/watch?v=xExfgBNIbck" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg><span><strong>Один день на Бали расставил все на свои места</strong><small>Смотреть · влог</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><button class="quick-chip" type="button" data-soon="The Hundred" aria-label="The Hundred — скоро"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><span><strong>The Hundred</strong><small>Искусство на шлемах</small></span><span class="soon-label">скоро</span></button><a class="quick-chip" href="https://www.youtube.com/@wensdayblog" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg><span><strong>YouTube · влоги</strong><small>Путешествия и личный блог</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="quick-chip" href="https://www.youtube.com/shorts/apDieaVFYak" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg><span><strong>В чём разница между миллионом и миллиардом?</strong><small>Смотреть · научпоп</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="quick-chip" href="https://music.amazon.com/artists/B087JQD7TQ/andry-wednesday" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-music"/></svg><span><strong>Amazon Music</strong><small>Andry Wednesday · музыка</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div></div>
+      </section>
     </section>
 
     <section class="worlds wrap section-space" id="worlds" aria-labelledby="worlds-title">
@@ -82,31 +130,106 @@
       <div class="world-grid">
         <article class="world-card science-card reveal" id="science">
           <div class="world-visual science-visual">
-            <div class="world-visual-top"><span>НАУЧПОП</span><span>01 / 02</span></div>
-            <div class="cosmos" aria-hidden="true"><div class="cosmos-ring ring-a"></div><div class="cosmos-ring ring-b"></div><div class="cosmos-ring ring-c"></div><div class="planet"></div><div class="satellite"></div><span class="math-label">∞</span><span class="math-small">а что, если?</span></div>
-            <div class="world-visual-bottom"><span>БОЛЬШИЕ ВОПРОСЫ.<br>ЧЕЛОВЕЧЕСКИЙ ЯЗЫК.</span><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></div>
+            <a class="channel-heading" href="https://www.youtube.com/@weensdaay" target="_blank" rel="noopener noreferrer"><img src="./assets/avatar-science.webp" width="160" height="160" alt="Аватар научпоп-канала WENSDAY" loading="lazy"><span><strong>WENSDAY</strong><small>НАУЧНО-ПОЗНАВАТЕЛЬНЫЙ КОНТЕНТ</small></span><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg></a>
+            <div class="media-gallery video-gallery" data-gallery data-interval="6500" role="group" aria-label="Видео о науке" aria-roledescription="карусель">
+    <div class="media-stage"><a class="media-slide is-active" href="https://www.youtube.com/shorts/tSxqSzXGcvk" target="_blank" rel="noopener noreferrer"  data-title="Это самое большое в мире число! #математика">
+        <img src="./assets/science-graham.webp" width="405" height="608" alt="Превью: Это самое большое в мире число! #математика" loading="lazy" decoding="async">
+        <span class="slide-copy"><span>Это самое большое в мире число! #математика</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+      </a><a class="media-slide" href="https://www.youtube.com/shorts/apDieaVFYak" target="_blank" rel="noopener noreferrer" aria-hidden="true" inert data-title="В чём разница между миллионом и миллиардом?">
+        <img data-src="./assets/science-billion.webp" width="405" height="608" alt="Превью: В чём разница между миллионом и миллиардом?"  decoding="async">
+        <span class="slide-copy"><span>В чём разница между миллионом и миллиардом?</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+      </a><a class="media-slide" href="https://www.youtube.com/shorts/n1q-Cwdqrws" target="_blank" rel="noopener noreferrer" aria-hidden="true" inert data-title="Наша земля 🌏 не круглой формы! #земля">
+        <img data-src="./assets/science-earth.webp" width="405" height="608" alt="Превью: Наша земля 🌏 не круглой формы! #земля"  decoding="async">
+        <span class="slide-copy"><span>Наша земля 🌏 не круглой формы! #земля</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+      </a><a class="media-slide" href="https://www.youtube.com/shorts/bYUP8R0kQf4" target="_blank" rel="noopener noreferrer" aria-hidden="true" inert data-title="Почему раскладка на клавиатуре ⌨ именно такая?">
+        <img data-src="./assets/science-keyboard.webp" width="405" height="608" alt="Превью: Почему раскладка на клавиатуре ⌨ именно такая?"  decoding="async">
+        <span class="slide-copy"><span>Почему раскладка на клавиатуре ⌨ именно такая?</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+      </a></div>
+    <div class="gallery-controls"><span class="gallery-count" aria-hidden="true">01 / 04</span><button type="button" data-slide="-1" aria-label="Предыдущий кадр: Видео о науке">←</button><button type="button" data-slide="1" aria-label="Следующий кадр: Видео о науке">→</button><span class="sr-only gallery-status" role="status"></span></div>
+  </div>
           </div>
           <div class="world-content"><div class="world-title"><h3>Мир в голове</h3><span aria-hidden="true">↗</span></div><p>Космос, числа и вещи, которые<br>сложнее, чем кажутся. Разбираемся вместе.</p><div class="social-links"><a class="social-row" href="https://www.youtube.com/@weensdaay" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg><span class="social-copy"><strong>YouTube</strong><span>Большие вопросы. Длинные истории.</span></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
 <a class="social-row" href="https://www.tiktok.com/@weensdaay" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-tiktok"/></svg><span class="social-copy"><strong>TikTok</strong><span>Когда «почему?» не отпускает.</span></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-<button class="social-row is-soon" type="button" data-soon="Instagram" aria-label="Instagram — скоро"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg><span class="social-copy"><strong>Instagram</strong><span>Ещё одна точка любопытства.</span></span><span class="soon-label">скоро</span></button></div></div>
+<button class="social-row is-soon" type="button" data-soon="Instagram" aria-label="Instagram — скоро"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg><span class="social-copy"><strong>Instagram</strong><span>Ещё одна точка любопытства.</span></span><span class="soon-label">скоро</span></button>
+<a class="social-row" href="https://www.youtube.com/@wensday3151" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg><span class="social-copy"><strong>YouTube · архив</strong><span>Мой старый канал. С чего всё начиналось.</span></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div>
         </article>
         <article class="world-card life-card reveal" id="life">
           <div class="world-visual life-visual">
-            <img src="./assets/desert.webp" width="480" height="640" alt="Путешествие по песчаным дюнам на квадроцикле" loading="lazy" decoding="async">
+            <div class="media-gallery travel-gallery" data-gallery data-interval="7200" role="group" aria-label="Путешествия и жизнь" aria-roledescription="карусель">
+    <div class="media-stage"><div class="media-slide is-active"   data-title="Где-то по пути">
+        <img src="./assets/desert.webp" width="720" height="960" alt="Андрей на квадроцикле в пустыне" loading="lazy" decoding="async">
+
+      </div><div class="media-slide"  aria-hidden="true" inert data-title="Без лишнего шума">
+        <img data-src="./assets/night-ride.webp" width="720" height="960" alt="Ночная поездка на мотоцикле"  decoding="async">
+
+      </div><div class="media-slide"  aria-hidden="true" inert data-title="К океану">
+        <img data-src="./assets/hero-beach-ride.webp" width="480" height="640" alt="WENSDAY на бирюзовом мотоцикле у океана"  decoding="async">
+
+      </div><div class="media-slide"  aria-hidden="true" inert data-title="На острове">
+        <img data-src="./assets/hero-temple.webp" width="480" height="640" alt="WENSDAY на каменной лестнице балийского храма"  decoding="async">
+
+      </div><div class="media-slide"  aria-hidden="true" inert data-title="Своя дорога">
+        <img data-src="./assets/hero-lake-road.webp" width="480" height="640" alt="WENSDAY на белом мотоцикле у горного озера"  decoding="async">
+
+      </div><div class="media-slide"  aria-hidden="true" inert data-title="Без суеты">
+        <img data-src="./assets/hero-jungle-pool.webp" width="480" height="640" alt="WENSDAY отдыхает в бассейне среди пальм и зелёных холмов"  decoding="async">
+
+      </div><div class="media-slide"  aria-hidden="true" inert data-title="Вдоль океана">
+        <img data-src="./assets/hero-coast.webp" width="480" height="640" alt="WENSDAY на чёрном мотоцикле у скалистого берега океана"  decoding="async">
+
+      </div><div class="media-slide"  aria-hidden="true" inert data-title="Между поездками">
+        <img data-src="./assets/hero-mirror.webp" width="480" height="640" alt="WENSDAY делает снимок в большом зеркале, в светлой рубашке"  decoding="async">
+
+      </div><div class="media-slide"  aria-hidden="true" inert data-title="Жить. Запоминать.">
+        <img data-src="./assets/portrait.webp" width="720" height="960" alt="Андрей на фоне золотого заката у океана"  decoding="async">
+
+      </div></div>
+
+  </div>
             <div class="world-visual-top"><span>ПУТЕШЕСТВИЯ И ЖИЗНЬ</span><span>02 / 02</span></div>
             <span class="life-script" aria-hidden="true">всё только<br>начинается.</span>
             <div class="world-visual-bottom"><span>БЕЗ ГОТОВОГО СЦЕНАРИЯ.<br>С ОТКРЫТЫМИ ГЛАЗАМИ.</span><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></div>
           </div>
-          <div class="world-content"><div class="world-title"><h3>Мир вокруг</h3><span aria-hidden="true">↗</span></div><p>Дороги, острова, случайные встречи.<br>Моя жизнь по ту сторону монтажа.</p><div class="social-links"><a class="social-row" href="https://www.instagram.com/weensdaay/" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg><span class="social-copy"><strong>Instagram</strong><span>Моменты, которые хочется оставить.</span></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-<a class="social-row" href="https://www.youtube.com/@wensdayblog" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg><span class="social-copy"><strong>YouTube</strong><span>Дневник путешествий. И всего между.</span></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-<button class="social-row is-soon" type="button" data-soon="TikTok" aria-label="TikTok — скоро"><svg class="icon" aria-hidden="true"><use href="#i-tiktok"/></svg><span class="social-copy"><strong>TikTok</strong><span>Жизнь короткими кадрами.</span></span><span class="soon-label">скоро</span></button></div></div>
+          <div class="world-content"><div class="world-title"><h3>Мир вокруг</h3><span aria-hidden="true">↗</span></div><p>Дороги, острова, случайные встречи.<br>Моя жизнь по ту сторону монтажа.</p><div class="vlog-feature"><div class="vlog-heading"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg><div><strong>YouTube · влоги</strong><span>Путешествия длиннее одного кадра.</span></div></div><div class="media-gallery video-gallery vlog-gallery" data-gallery data-interval="7000" role="group" aria-label="YouTube — влоги" aria-roledescription="карусель">
+    <div class="media-stage"><a class="media-slide is-active" href="https://www.youtube.com/watch?v=mldj7qPBAIg" target="_blank" rel="noopener noreferrer"  data-title="Тайланд… Всё пошло не по плану">
+        <img src="./assets/vlog-thailand.webp" width="720" height="404" alt="Превью: Тайланд… Всё пошло не по плану" loading="lazy" decoding="async">
+        <span class="slide-copy"><span>Тайланд… Всё пошло не по плану</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+      </a><a class="media-slide" href="https://www.youtube.com/watch?v=sP9Ri2fdiXw" target="_blank" rel="noopener noreferrer" aria-hidden="true" inert data-title="Отдых с девочками в Куала Лампур закончился трагедией...">
+        <img data-src="./assets/vlog-kuala-lumpur.webp" width="720" height="404" alt="Превью: Отдых с девочками в Куала Лампур закончился трагедией..."  decoding="async">
+        <span class="slide-copy"><span>Отдых с девочками в Куала Лампур закончился трагедией...</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+      </a><a class="media-slide" href="https://www.youtube.com/watch?v=xExfgBNIbck" target="_blank" rel="noopener noreferrer" aria-hidden="true" inert data-title="Один день на Бали расставил все на свои места">
+        <img data-src="./assets/vlog-bali.webp" width="720" height="404" alt="Превью: Один день на Бали расставил все на свои места"  decoding="async">
+        <span class="slide-copy"><span>Один день на Бали расставил все на свои места</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+      </a><a class="media-slide" href="https://www.youtube.com/watch?v=VZ0voORIkGo" target="_blank" rel="noopener noreferrer" aria-hidden="true" inert data-title="Гродно | Куда поехать в Беларуси? Что посмотреть в Гродно? Главный колхоз страны!">
+        <img data-src="./assets/vlog-grodno.webp" width="480" height="270" alt="Превью: Гродно | Куда поехать в Беларуси? Что посмотреть в Гродно? Главный колхоз страны!"  decoding="async">
+        <span class="slide-copy"><span>Гродно | Куда поехать в Беларуси? Что посмотреть в Гродно? Главный колхоз страны!</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+      </a><a class="media-slide" href="https://www.youtube.com/watch?v=rf4n0PwDb7M" target="_blank" rel="noopener noreferrer" aria-hidden="true" inert data-title="Браславские озёра! Отдых в Беларуси! Браслав глазами туриста!">
+        <img data-src="./assets/vlog-braslav.webp" width="480" height="270" alt="Превью: Браславские озёра! Отдых в Беларуси! Браслав глазами туриста!"  decoding="async">
+        <span class="slide-copy"><span>Браславские озёра! Отдых в Беларуси! Браслав глазами туриста!</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+      </a></div>
+    <div class="gallery-controls"><span class="gallery-count" aria-hidden="true">01 / 05</span><button type="button" data-slide="-1" aria-label="Предыдущий кадр: YouTube — влоги">←</button><button type="button" data-slide="1" aria-label="Следующий кадр: YouTube — влоги">→</button><span class="sr-only gallery-status" role="status"></span></div>
+  </div></div><div class="social-links"><a class="social-row" href="https://www.instagram.com/weensdaay/" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg><span class="social-copy"><strong>Instagram</strong><span>Моменты, которые хочется оставить.</span></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+<a class="social-row" href="https://www.youtube.com/@wensdayblog" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg><span class="social-copy"><strong>YouTube</strong><span>Влоги о путешествиях. И обо всём между.</span></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+<a class="social-row" href="https://www.tiktok.com/@bed1guy" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-tiktok"/></svg><span class="social-copy"><strong>TikTok · BedGuy</strong><span>Тейки не вставая с кровати.</span></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div>
         </article>
       </div>
     </section>
 
     <section class="music-section section-space" id="music" aria-labelledby="music-title">
       <div class="wrap music-layout">
-        <div class="music-art reveal" aria-hidden="true"><div class="record-sleeve"><span>ANDRY<br>WEDNESDAY</span><div class="sleeve-glow"></div><span class="sleeve-caption">ЗВУК / ЧУВСТВО / МОМЕНТ</span></div><div class="vinyl"><div class="vinyl-label"><span>AW</span><i></i><small>SIDE A</small></div></div><span class="music-sticker">СВОЙ<br>РИТМ.</span></div>
+        <div class="music-art reveal"><div class="record-sleeve"><div class="media-gallery album-gallery" data-gallery data-interval="6700" role="group" aria-label="Релизы Andry Wednesday" aria-roledescription="карусель">
+    <div class="media-stage"><a class="media-slide is-active" href="https://music.apple.com/ru/album/ticket/1604042015" target="_blank" rel="noopener noreferrer"  data-title="Ticket">
+        <img src="./assets/album-ticket.webp" width="720" height="960" alt="Обложка альбома Ticket — Andry Wednesday" loading="lazy" decoding="async">
+        <span class="slide-copy"><span>Ticket</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+      </a><a class="media-slide" href="https://music.apple.com/ru/album/%D0%BA%D1%82%D0%BE-ep/1524163191" target="_blank" rel="noopener noreferrer" aria-hidden="true" inert data-title="Кто — EP">
+        <img data-src="./assets/album-kto.webp" width="720" height="960" alt="Обложка Кто — Andry Wednesday"  decoding="async">
+        <span class="slide-copy"><span>Кто — EP</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+      </a><a class="media-slide" href="https://music.apple.com/ru/album/%D0%B3%D0%B5%D1%80%D0%BE%D0%B9-%D1%82%D1%80%D0%B8%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8-single/1525013267" target="_blank" rel="noopener noreferrer" aria-hidden="true" inert data-title="Герой трилогии">
+        <img data-src="./assets/album-hero-trilogy.webp" width="720" height="960" alt="Обложка Герой трилогии — Andry Wednesday"  decoding="async">
+        <span class="slide-copy"><span>Герой трилогии</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+      </a></div>
+    <div class="gallery-controls"><span class="gallery-count" aria-hidden="true">01 / 03</span><button type="button" data-slide="-1" aria-label="Предыдущий кадр: Релизы Andry Wednesday">←</button><button type="button" data-slide="1" aria-label="Следующий кадр: Релизы Andry Wednesday">→</button><span class="sr-only gallery-status" role="status"></span></div>
+  </div></div><div class="vinyl" aria-hidden="true"><div class="vinyl-label"><span>AW</span><i></i><small>SIDE A</small></div></div><span class="music-sticker" aria-hidden="true">СВОЙ<br>РИТМ.</span></div>
         <div class="music-copy reveal"><span class="eyebrow">02 / В ДРУГОМ РИТМЕ</span><h2 id="music-title">Иногда проще<br><em>музыкой.</em></h2><p class="artist-name">Andry Wednesday</p><p class="music-description">Ещё одна сторона меня.<br>Выбирай, где тебе удобнее слушать.</p><div class="music-links" aria-label="Музыкальные площадки"><a class="music-link" href="https://open.spotify.com/artist/5myuZ9VeAWlwbWLtC5dduE" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-spotify"/></svg><span>Spotify</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
 <a class="music-link" href="https://music.apple.com/ru/artist/andry-wednesday/1490428863" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-music"/></svg><span>Apple Music</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
 <a class="music-link" href="https://music.youtube.com/channel/UCB7PPfULSbQjRlmmxXJETGA" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg><span>YouTube Music</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
@@ -123,7 +246,7 @@
       <div class="section-heading reveal"><span class="eyebrow">03 / ИДЕИ СТАНОВЯТСЯ РЕАЛЬНЫМИ</span><h2 id="projects-title">За пределами<br><span class="muted">контента.</span></h2><p>То, что хочется не только рассказать.<br>Но и сделать.</p></div>
       <div class="project-grid">
         <article class="project-card hundred-project reveal"><div class="project-art helmet-art"><img src="./assets/helmet.webp" width="900" height="1200" alt="Расписанный вручную шлем The Hundred 000/100: розовое и фиолетовое граффити" loading="lazy" decoding="async"><span class="project-category">ART / ОБЪЕКТЫ</span><span class="helmet-number" aria-hidden="true">000—100</span></div><div class="project-info"><button class="project-link" type="button" data-soon="The Hundred" aria-label="The Hundred — скоро"><span>The Hundred</span><span class="soon-label">скоро <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></button><p>Одна история о свободе стиля.<br>Рассказанная через шлемы.</p></div></article>
-        <article class="project-card continuum-project reveal"><div class="project-art continuum-art" aria-hidden="true"><span class="project-category">APP / ФОКУС</span><div class="continuum-orbit"><i></i><i></i><i></i><span>c.</span></div><span class="continuum-caption">MAKE ROOM<br>FOR WHAT MATTERS.</span></div><div class="project-info"><button class="project-link" type="button" data-soon="Continuum" aria-label="Continuum — скоро"><span>Continuum</span><span class="soon-label">скоро <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></button><p>Пространство для целей.<br>Ссылка на приложение появится здесь.</p></div></article>
+        <article class="project-card continuum-project reveal"><div class="project-art continuum-art"><span class="project-category">APP / ФОКУС</span><div class="continuum-orbit"><i></i><i></i><i></i><img src="./assets/continuum-logo.webp" width="512" height="512" alt="Логотип Continuum" loading="lazy" decoding="async"></div><span class="continuum-caption">MAKE ROOM<br>FOR WHAT MATTERS.</span></div><div class="project-info"><button class="project-link" type="button" data-soon="Continuum" aria-label="Continuum — скоро"><span>Continuum</span><span class="soon-label">скоро <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></button><p>Пространство для целей.<br>Ссылка на приложение появится здесь.</p></div></article>
         <article class="project-card bali-project reveal"><div class="project-art bali-art"><img src="./assets/penida.webp" width="1000" height="667" alt="Скалы и бирюзовый океан у пляжа Келингкинг, Нуса-Пенида" loading="lazy" decoding="async"><span class="project-category">TRAVEL / BALI</span><span class="bali-script" aria-hidden="true">Bali,<br>with love.</span></div><div class="project-info"><button class="project-link" type="button" data-soon="Bali Trips" aria-label="Bali Trips — скоро"><span>Bali Trips</span><span class="soon-label">скоро <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></button><p>Остров, который стал<br>чем-то большим, чем точка на карте.</p></div></article>
       </div>
       <aside class="books-note reveal" aria-label="Книги Андрея Середы"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg><div class="books-intro"><span>Кое-что осталось на бумаге.</span><span>Андрей Середа · книги</span></div><div class="book-links"><a class="book-link" href="https://www.litres.ru/author/andrey-sereda/" target="_blank" rel="noopener noreferrer"><span>Книги на Литрес</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div></aside>

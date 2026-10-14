@@ -12,12 +12,13 @@ export default {
   science: [
     { name: 'YouTube', icon: 'youtube', label: 'Большие вопросы. Длинные истории.', url: 'https://www.youtube.com/@weensdaay' },
     { name: 'TikTok', icon: 'tiktok', label: 'Когда «почему?» не отпускает.', url: 'https://www.tiktok.com/@weensdaay' },
-    { name: 'Instagram', icon: 'instagram', label: 'Ещё одна точка любопытства.', url: null }
+    { name: 'Instagram', icon: 'instagram', label: 'Ещё одна точка любопытства.', url: null },
+    { name: 'YouTube · архив', icon: 'youtube', label: 'Мой старый канал. С чего всё начиналось.', url: 'https://www.youtube.com/@wensday3151' }
   ],
   life: [
     { name: 'Instagram', icon: 'instagram', label: 'Моменты, которые хочется оставить.', url: 'https://www.instagram.com/weensdaay/' },
-    { name: 'YouTube', icon: 'youtube', label: 'Дневник путешествий. И всего между.', url: 'https://www.youtube.com/@wensdayblog' },
-    { name: 'TikTok', icon: 'tiktok', label: 'Жизнь короткими кадрами.', url: null }
+    { name: 'YouTube', icon: 'youtube', label: 'Влоги о путешествиях. И обо всём между.', url: 'https://www.youtube.com/@wensdayblog' },
+    { name: 'TikTok · BedGuy', icon: 'tiktok', label: 'Тейки не вставая с кровати.', url: 'https://www.tiktok.com/@bed1guy' }
   ],
   music: [
     { name: 'Spotify', icon: 'spotify', url: 'https://open.spotify.com/artist/5myuZ9VeAWlwbWLtC5dduE' },

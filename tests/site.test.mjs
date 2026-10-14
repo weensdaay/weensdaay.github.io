@@ -4,6 +4,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import config from '../site.config.mjs';
+import media from '../media.config.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const docs=path.join(root,'docs');
 const html=await fs.readFile(path.join(docs,'index.html'),'utf8');
@@ -20,7 +21,7 @@ test('unfinished destinations remain honest buttons, never fabricated links',()=
   assert.match(html,/<button[^>]+data-soon="Telegram"/);
   assert.doesNotMatch(html,/href="https:\/\/t.me\//);
   assert.doesNotMatch(html,/href="(?:javascript:|#soon|https?:\/\/localhost)/);
-  assert.equal((html.match(/data-soon="Telegram"/g)||[]).length,3);
+  assert.equal((html.match(/data-soon="Telegram"/g)||[]).length,4);
   assert.match(html,/<dialog[^>]+aria-labelledby="soon-title"/);
 });
 test('all public relative assets and anchor destinations exist',async()=>{
@@ -45,4 +46,22 @@ test('contact is the selected iCloud alias and creates a draft rather than sendi
   assert.ok(html.includes(`mailto:${config.contact.email}?subject=${encodeURIComponent(config.contact.subject)}`));
   assert.ok(html.includes(`data-copy-email="${config.contact.email}"`));
   assert.doesNotMatch(html,/@gmail\.com/);
+});
+test('both language versions include working local gallery assets and complete translations',async()=>{
+  const en=await fs.readFile(path.join(docs,'en/index.html'),'utf8');
+  assert.match(en,/<html lang="en">/);
+  assert.doesNotMatch(en,/[А-Яа-яЁё]/,'English copy still contains untranslated text');
+  for(const page of [html,en]){
+    for(const match of page.matchAll(/(?:src|data-src|href)="\.\.?\/([^"#]+)"/g)) await fs.access(path.join(docs,match[1]));
+    for(const image of [...media.photos,...media.science,...media.vlogs,...media.albums]) assert.ok(page.includes(image.src),image.src);
+  }
+  assert.match(en,/rel="canonical" href="https:\/\/weensdaay.github.io\/en\/"/);
+  assert.match(html,/hreflang="en"/);
+});
+test('ribbon includes every destination including email, albums and individual videos',()=>{
+  const ribbon=html.split('<div class="quick-group">')[1].split('</div></div></div>')[0];
+  const destinations=[...config.science,...config.life,...config.music,...config.books,...media.science,...media.vlogs,...media.albums].map(x=>x.url).filter(Boolean);
+  for(const url of destinations) assert.ok(ribbon.includes(url.replaceAll('&','&amp;')),url);
+  assert.ok(ribbon.includes('mailto:'+config.contact.email));
+  for(const project of ['The Hundred','Continuum','Bali Trips'])assert.ok(ribbon.includes(project));
 });

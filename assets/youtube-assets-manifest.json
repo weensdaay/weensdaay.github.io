@@ -1,0 +1,126 @@
+{
+  "verifiedDate": "2026-10-14",
+  "note": "Downloaded public channel assets via browser pageAssets. Original resolution retained; no upscaling.",
+  "assets": [
+    {
+      "file": "assets/avatar-science.webp",
+      "title": "weensdaay — научпоп",
+      "url": "https://www.youtube.com/@weensdaay",
+      "section": "avatar",
+      "width": 720,
+      "height": 720,
+      "bytes": 38178,
+      "sourceImage": "https://yt3.googleusercontent.com/gKSGCYGev_zgbGefPeR52mCdECqPUCiRMdZZObp2WErnFg79bE_nIslqQbXroy313G1NnM03cQ=s900-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "file": "assets/science-graham.webp",
+      "title": "Это самое большое в мире число! #математика",
+      "url": "https://www.youtube.com/shorts/tSxqSzXGcvk",
+      "section": "science",
+      "width": 405,
+      "height": 608,
+      "bytes": 11544,
+      "sourceImage": "https://i.ytimg.com/vi/tSxqSzXGcvk/oar1.jpg?sqp=-oaymwErCJUDEOAESFqQAgHyq4qpAxoIARUAAIhCyAEB2AEB4gEKCBgQAhgGOAFAAQ==&rs=AOn4CLD57unSIRaPNYe5I0o7MC0FAVCYkQ&usqp=CCk"
+    },
+    {
+      "file": "assets/science-billion.webp",
+      "title": "В чём разница между миллионом и миллиардом?",
+      "url": "https://www.youtube.com/shorts/apDieaVFYak",
+      "section": "science",
+      "width": 405,
+      "height": 608,
+      "bytes": 36212,
+      "sourceImage": "https://i.ytimg.com/vi/apDieaVFYak/oar1.jpg?sqp=-oaymwErCJUDEOAESFqQAgHyq4qpAxoIARUAAIhCyAEB2AEB4gEKCBgQAhgGOAFAAQ==&rs=AOn4CLDOLdN-TpFWzm9PkYQ1jdByWBtEKw&usqp=CCk"
+    },
+    {
+      "file": "assets/science-earth.webp",
+      "title": "Наша земля 🌏 не круглой формы! #земля",
+      "url": "https://www.youtube.com/shorts/n1q-Cwdqrws",
+      "section": "science",
+      "width": 405,
+      "height": 608,
+      "bytes": 41470,
+      "sourceImage": "https://i.ytimg.com/vi/n1q-Cwdqrws/oar3.jpg?sqp=-oaymwErCJUDEOAESFqQAgHyq4qpAxoIARUAAIhCyAEB2AEB4gEKCBgQAhgGOAFAAQ==&rs=AOn4CLDwLZzhhvFa9Djr1kbic47TjwZCTA&usqp=CCk"
+    },
+    {
+      "file": "assets/science-keyboard.webp",
+      "title": "Почему раскладка на клавиатуре ⌨ именно такая?",
+      "url": "https://www.youtube.com/shorts/bYUP8R0kQf4",
+      "section": "science",
+      "width": 405,
+      "height": 608,
+      "bytes": 25664,
+      "sourceImage": "https://i.ytimg.com/vi/bYUP8R0kQf4/oar3.jpg?sqp=-oaymwErCJUDEOAESFqQAgHyq4qpAxoIARUAAIhCyAEB2AEB4gEKCBgQAhgGOAFAAQ==&rs=AOn4CLAqRVjvTyEP3DYnozWbR47T-8VUkw&usqp=CCk"
+    },
+    {
+      "file": "assets/vlog-thailand.webp",
+      "title": "Тайланд… Всё пошло не по плану",
+      "url": "https://www.youtube.com/watch?v=mldj7qPBAIg",
+      "section": "life",
+      "width": 720,
+      "height": 404,
+      "bytes": 58742,
+      "sourceImage": "https://i.ytimg.com/vi/mldj7qPBAIg/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLA4ctmw7c0IZbd0KvVL_Mfa-wfK2Q"
+    },
+    {
+      "file": "assets/vlog-kuala-lumpur.webp",
+      "title": "Отдых с девочками в Куала Лампур закончился трагедией...",
+      "url": "https://www.youtube.com/watch?v=sP9Ri2fdiXw",
+      "section": "life",
+      "width": 720,
+      "height": 404,
+      "bytes": 58364,
+      "sourceImage": "https://i.ytimg.com/vi/sP9Ri2fdiXw/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLA3TkbxiLGBxMevoGmmkabSj6tFWg"
+    },
+    {
+      "file": "assets/vlog-bali.webp",
+      "title": "Один день на Бали расставил все на свои места",
+      "url": "https://www.youtube.com/watch?v=xExfgBNIbck",
+      "section": "life",
+      "width": 720,
+      "height": 404,
+      "bytes": 54752,
+      "sourceImage": "https://i.ytimg.com/vi/xExfgBNIbck/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLC3Z013Pb0N0XcHchf7hSQ8A-Gbyw"
+    },
+    {
+      "file": "assets/vlog-grodno.webp",
+      "title": "Гродно | Куда поехать в Беларуси? Что посмотреть в Гродно? Главный колхоз страны!",
+      "url": "https://www.youtube.com/watch?v=VZ0voORIkGo",
+      "section": "life",
+      "width": 480,
+      "height": 270,
+      "bytes": 55616,
+      "sourceImage": "https://i.ytimg.com/vi/VZ0voORIkGo/hqdefault.jpg?sqp=-oaymwEnCOADEI4CSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBL3EzrGJ5Pl3WQipFHg8d9JPzS2A"
+    },
+    {
+      "file": "assets/vlog-braslav.webp",
+      "title": "Браславские озёра! Отдых в Беларуси! Браслав глазами туриста!",
+      "url": "https://www.youtube.com/watch?v=rf4n0PwDb7M",
+      "section": "life",
+      "width": 480,
+      "height": 270,
+      "bytes": 58374,
+      "sourceImage": "https://i.ytimg.com/vi/rf4n0PwDb7M/hqdefault.jpg?sqp=-oaymwEnCOADEI4CSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLARADq38rSld-mawozfxWTvKVNazg"
+    }
+  ],
+  "socials": {
+    "science": {
+      "youtube": "https://www.youtube.com/@weensdaay",
+      "tiktok": "https://www.tiktok.com/@weensdaay",
+      "instagram": null
+    },
+    "life": {
+      "youtube": "https://www.youtube.com/@wensdayblog",
+      "instagram": "https://www.instagram.com/weensdaay/",
+      "tiktok": "https://www.tiktok.com/@bed1guy",
+      "tiktokLabel": "BedGuy"
+    },
+    "legacyYoutube": "https://www.youtube.com/@wensday3151",
+    "telegram": null
+  },
+  "socialSources": [
+    "https://www.youtube.com/@weensdaay",
+    "https://www.youtube.com/@wensdayblog"
+  ],
+  "socialNote": "Both About dialogs re-read on 2026-10-14. Telegram intentionally not connected per user instruction. BedGuy explicitly labelled as second TikTok in life-channel About. Science Instagram has not been created per user."
+}
