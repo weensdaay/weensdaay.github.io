@@ -55,3 +55,11 @@
 - [frame-ancestors не поддерживается в meta](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/frame-ancestors)
 - [DOM XSS prevention](https://cheatsheetseries.owasp.org/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.html)
 - [GitHub Actions: права и закрепление SHA](https://docs.github.com/en/actions/reference/security/secure-use)
+
+## Итоговая проверка публикации
+
+- 21 локальный тест прошёл; 9 тестов статистики прошли повторно на GitHub runner.
+- [Первый автоматический сбор и публикация](https://github.com/weensdaay/weensdaay.github.io/actions/runs/38502959778): оба задания `success`, шесть анонимных источников обновлены, седьмой имеет сохранённый свежий снимок.
+- [Публикация сайта](https://github.com/weensdaay/weensdaay.github.io/actions/runs/38502958312): `success`. Полученные по HTTPS RU/EN побайтово совпали с локальным `docs/`. Модуль статистики отдан как `text/javascript`.
+- На публичной странице проверено фактическое обновление общей цифры из JSON: ≈118K в исходном снимке → ≈258K после загрузки новых счётчиков. Ссылки не изменились. Консоль не показала ошибок CSP/JS в проверенных сценариях.
+- Проверены ширины 320, 390, 430 и 1280 px, стрелки карусели, RU/EN и раскрытие методики. Горизонтального переполнения страницы/карточек итогов нет. Первый набор HTML/CSS/JS/шрифтов/hero-изображений — 278,887 байт без сжатия.

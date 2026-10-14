@@ -96,3 +96,7 @@ Anonymous HTTPS reads, no browser session, cookies or social API credentials:
 YouTube data is extracted as JSON from `ytInitialData`, not evaluated as JavaScript; both channel metadata and the about model must match a reviewed channel ID. This is public HTML extraction, not a guaranteed API contract.
 
 [YouTube subscriber rounding](https://support.google.com/youtube/answer/6051134?hl=en), [channel resource semantics](https://developers.google.com/youtube/v3/docs/channels), [owner-authorized Analytics reports](https://developers.google.com/youtube/analytics/channel_reports), [date-range query and authorization](https://developers.google.com/youtube/analytics/reference/reports/query).
+
+### First unattended GitHub run
+
+[Run 38502959778](https://github.com/weensdaay/weensdaay.github.io/actions/runs/38502959778), 2026-10-14 02:48 UTC, succeeded in both collection and publication. Anonymous availability differed by network: the GitHub runner received ordinary TikTok public profile JSON for `@weensdaay` (139,900 followers) and `@bed1guy` (69 followers), while Instagram was unavailable there. It retained Instagram's dated anonymous local snapshot; no authenticated fallback was used. Six profiles refreshed, seven had recent known follower counts; total 257,574 before allowing for YouTube rounding, displayed as approximately 258K. Three YouTube public view counters total 75,834,015, displayed as 75.8M. The archive remained unavailable. These are dated observations, not permanent marketing claims.
