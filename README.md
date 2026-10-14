@@ -78,10 +78,14 @@ GitHub scheduling is best effort, can be delayed, and may be disabled after 60 d
 
 ## Private website analytics · 67 Control
 
-The public site and public social-account counters remain static and separate from private website analytics. `analytics/` contains a Cloudflare Worker + D1 collector; `analytics.config.mjs` enables the tiny local browser client only after a real endpoint is deployed. Currently the endpoint is `null`: **visitor collection is not enabled yet**.
+The public site and public social-account counters remain static and separate from private website analytics. `analytics/` contains a Cloudflare Worker + D1 collector; `analytics.config.mjs` enables the tiny local browser client only after a real endpoint is deployed. The deployed collector is enabled at `https://wensday-analytics.zendard78.workers.dev/v1/events`.
 
 67 Control 0.5.0 adds WENSDAY overview, source/account attribution, countries, coarse devices, outgoing destinations, section/scroll actions, and nine profile links to copy. Use a different tagged link in each bio to identify the specific account. Referrers alone often disappear in social apps. No names, raw IPs, full user agents, full referrer URLs, screen recording, social credentials or persistent visitor IDs are stored. Session IDs expire after30min idle/4h total. Events expire after90days. DNT/GPC and the optional footer opt-out stop collection.
 
-See `analytics/README.md` for deployment, API contract and security limits. Read secrets belong only in the Worker and native Keychain; never put them in this repository, Pages, URL query parameters or client JavaScript. New deployments require an authorized Cloudflare connection. The prepared collector has not been published while that authorization is pending.
+See `analytics/README.md` for deployment, API contract and security limits. Read secrets belong only in the Worker and native Keychain; never put them in this repository, Pages, URL query parameters or client JavaScript. New deployments require an authorized Cloudflare connection. The collector and native 67 Control connection were verified live on 2026-10-14.
 
 Validation: `node --test tests/*.test.mjs analytics/worker.test.mjs`. Worker bundling can be checked with `wrangler deploy --dry-run --config analytics/wrangler.json`; this does not deploy.
+
+## Product previews
+
+`/bali-trips/` and `/en/bali-trips/` introduce the existing unpublished Bali Trips prototype. They contain screenshots and product copy, not the private application source or any account data. `scripts/render-projects.mjs` renders this page and the main product showcase. Destinations remain in `site.config.mjs`. IconBeast uses genuine published editor screenshots. Continuum uses clearly labelled, fictional demo tasks in HTML. Main-page previews reuse the accessible gallery controls, lazy image loading, visibility pause and reduced-motion preferences. Photo and map credits accompany the screenshots in `assets/products/bali-credits.txt`.

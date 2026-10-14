@@ -95,6 +95,16 @@
     "url": "https://www.litres.ru/author/andrey-sereda/"
   },
   {
+    "id": "project-continuum",
+    "name": "continuum",
+    "url": "https://continuum-mobile.zendard78.chatgpt.site/"
+  },
+  {
+    "id": "project-bali",
+    "name": "bali",
+    "url": "https://weensdaay.github.io/bali-trips/"
+  },
+  {
     "id": "project-iconbeast",
     "name": "iconbeast",
     "url": "https://iconbeast.org/"

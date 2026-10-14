@@ -7,6 +7,7 @@ import translations from '../translations.mjs';
 import analytics from '../analytics.config.mjs';
 import {analyticsCatalog,destinationID} from './analytics-catalog.mjs';
 import {renderStats} from './render-stats.mjs';
+import {renderProjectShowcase, renderBaliPreview} from './render-projects.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const output = path.join(root, 'docs');
@@ -108,6 +109,7 @@ const tokens = {
   'project-continuum': project('continuum', 'Continuum'),
   'project-bali': project('bali', 'Bali Trips'),
   'project-iconbeast': project('iconbeast', 'IconBeast'),
+  'project-showcase': renderProjectShowcase({gallery,project,external,icon}),
 };
 html = html.replace(/\{\{([a-z-]+)\}\}/g, (_, key) => {
   if (!(key in tokens)) throw new Error(`Unknown template token: ${key}`);
@@ -129,6 +131,7 @@ for (const [ru,en] of Object.entries(translations).sort((a,b)=>b[0].length-a[0].
   englishHtml = englishHtml.replaceAll(ru.includes('<br>') ? ru : esc(ru), en.includes('<br>') ? en : esc(en));
 }
 englishHtml = englishHtml.replace('<html lang="ru">','<html lang="en">')
+  .replaceAll(`${config.origin}/bali-trips/`,`${config.origin}/en/bali-trips/`)
   .replace('content="ru_RU"','content="en_US"')
   .replace(`rel="canonical" href="${config.origin}/"`,`rel="canonical" href="${config.origin}/en/"`)
   .replace(`property="og:url" content="${config.origin}/"`,`property="og:url" content="${config.origin}/en/"`)
@@ -136,12 +139,17 @@ englishHtml = englishHtml.replace('<html lang="ru">','<html lang="en">')
   .replaceAll('"./','"../');
 await fs.mkdir(path.join(output,'en'),{recursive:true});
 await fs.writeFile(path.join(output,'en/index.html'),englishHtml.replace('<!--PUBLIC-STATS-->',trackedLinks(renderStats(stats,'en'))));
+for (const language of ['ru','en']) {
+  const directory=path.join(output,language === 'en' ? 'en/bali-trips' : 'bali-trips');
+  await fs.mkdir(directory,{recursive:true});
+  await fs.writeFile(path.join(directory,'index.html'),renderBaliPreview(language,config));
+}
 await fs.writeFile(path.join(output,'stats.json'),JSON.stringify(stats)+'\n');
 await Promise.all(['styles.css','app.js','locale.js','analytics.js','analytics-model.mjs','stats.js','stats-model.mjs','favicon.svg','social-preview.svg'].map(name => fs.copyFile(path.join(root,'src',name),path.join(output,name))));
 await fs.cp(path.join(root,'assets'),path.join(output,'assets'),{recursive:true});
 await fs.writeFile(path.join(output,'.nojekyll'),'');
 await fs.writeFile(path.join(output,'robots.txt'),`User-agent: *\nAllow: /\nSitemap: ${config.origin}/sitemap.xml\n`);
-await fs.writeFile(path.join(output,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>${esc(config.origin)}/</loc></url><url><loc>${esc(config.origin)}/en/</loc></url></urlset>\n`);
+await fs.writeFile(path.join(output,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${['/','/en/','/bali-trips/','/en/bali-trips/'].map(route=>`<url><loc>${esc(config.origin)}${route}</loc></url>`).join('')}</urlset>\n`);
 const securityMeta = html.match(/<meta http-equiv="Content-Security-Policy"[^>]+>/)[0];
 await fs.writeFile(path.join(output,'404.html'),`<!doctype html><html lang="ru"><meta charset="utf-8">${securityMeta}<meta name="referrer" content="no-referrer"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Страница не найдена — WENSDAY</title><link rel="stylesheet" href="/styles.css"><body><main class="not-found"><span class="eyebrow">404 / НЕМНОГО НЕ ТУДА</span><h1>Свернули<br>с маршрута.</h1><p>Этой страницы нет. Всё самое интересное — на главной.</p><a class="text-link" href="/">Вернуться к WENSDAY ↗</a></main></body></html>`);
 console.log('Built docs/ — static HTML, local assets, no runtime dependencies.');

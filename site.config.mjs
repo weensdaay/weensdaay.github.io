@@ -36,8 +36,8 @@ export default {
   ],
   projects: {
     hundred: null,
-    continuum: null,
-    bali: null,
+    continuum: 'https://continuum-mobile.zendard78.chatgpt.site/',
+    bali: 'https://weensdaay.github.io/bali-trips/',
     iconbeast: 'https://iconbeast.org/'
   }
 };

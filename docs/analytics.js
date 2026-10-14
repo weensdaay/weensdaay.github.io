@@ -19,7 +19,7 @@ if (!optedOut() && settings.endpoint && trackingAllowed(navigator,location.hostn
     let session,queue=[],timer;
     try {session=JSON.parse(sessionStorage.getItem(storageKey));} catch {}
     const save=()=>{try {sessionStorage.setItem(storageKey,JSON.stringify(session));} catch {}};
-    const page=location.pathname==='/en/' ? '/en/' : '/';
+    const page=['/','/en/','/bali-trips/','/en/bali-trips/'].includes(location.pathname) ? location.pathname : '/';
     function activeSession() {
       const now=Date.now();
       if (!reusableSession(session,now)) session={id:crypto.randomUUID(),started:now,touched:now,...originAttribution};
