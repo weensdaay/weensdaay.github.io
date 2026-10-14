@@ -63,3 +63,14 @@
 - [Публикация сайта](https://github.com/weensdaay/weensdaay.github.io/actions/runs/38502958312): `success`. Полученные по HTTPS RU/EN побайтово совпали с локальным `docs/`. Модуль статистики отдан как `text/javascript`.
 - На публичной странице проверено фактическое обновление общей цифры из JSON: ≈118K в исходном снимке → ≈258K после загрузки новых счётчиков. Ссылки не изменились. Консоль не показала ошибок CSP/JS в проверенных сценариях.
 - Проверены ширины 320, 390, 430 и 1280 px, стрелки карусели, RU/EN и раскрытие методики. Горизонтального переполнения страницы/карточек итогов нет. Первый набор HTML/CSS/JS/шрифтов/hero-изображений — 278,887 байт без сжатия.
+
+## 2026-10-14 · Private visitor analytics prepared
+
+Status: collector/client implemented and tested locally; Cloudflare publication awaiting account authorization, client endpoint disabled. Public site still has no login, CMS, writeable content or uploaded executable content.
+
+- Public ingestion writes only validated fixed-enum events with UUIDs, a coarse source/account/device and edge country. Exact schema rejects arbitrary text, extra fields, unknown links, URLs and identifiers. Body<=12KiB/16events; IP HMAC rate limiter60requests/min/edge;256events/session; dedupe transactionally in SQLite/D1.
+- Report endpoint requires independent bearer secret, constant-time comparison, no CORS, no caching, no redirects from native authenticated transport; secret stays Worker/Keychain.
+- Parameterized SQL; collection time assigned by server; source attribution immutable per session; country supplied by Cloudflare edge. No raw IP/UA stored and execution logs disabled. Four-hour session cap,30min inactivity,90day retention.
+- Browser client honors DNT/GPC, opt-out, excludes localhost/automation and waits for language selection to avoid counting automatic redirects twice. Campaign source survives language redirect, arbitrary query fields are stripped.
+- Remaining limits: public ingestion cannot prove a human visit; a determined nonbrowser client can spoof Origin and events. Bot filters/rate limits reduce noise but do not make counts audited or exact. Country can reflect VPN. Session counts are not unique people. Blocked scripts/adblockers can undercount. Specific social accounts require distinct tagged profile links. GitHub Pages retains its documented header limitations.
+- Validation includes real client→server schema integration, opt-out/locale lifecycle, SQL-backed dedupe/retention/first attribution, malformed/oversized input and authorization failure cases. No claim of a production penetration test before deployment.

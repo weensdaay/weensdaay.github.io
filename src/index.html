@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self' https://api.country.is https://raw.githubusercontent.com/weensdaay/weensdaay.github.io/public-metrics/stats.json; base-uri 'none'; form-action 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; require-trusted-types-for 'script'; trusted-types 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self' https://api.country.is{{analytics-connect}} https://raw.githubusercontent.com/weensdaay/weensdaay.github.io/public-metrics/stats.json; base-uri 'none'; form-action 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; require-trusted-types-for 'script'; trusted-types 'none'">
   <meta name="referrer" content="no-referrer">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>{{title}}</title>
@@ -30,6 +30,7 @@
   <script src="./locale.js" defer></script>
   <script src="./app.js" defer></script>
   <script src="./stats.js" type="module"></script>
+  <script src="./analytics.js" type="module"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти к содержимому</a>
@@ -138,6 +139,7 @@
         <div class="footer-top"><span class="eyebrow">РАД, ЧТО ТЫ ЗДЕСЬ.</span><span class="eyebrow">ПРОДОЛЖЕНИЕ СЛЕДУЕТ ↗</span></div>
         <div class="footer-main"><h2>Увидимся<br><em>где-нибудь.</em></h2>{{telegram-footer}}</div>
         <div class="contact-row" id="contact"><div><span class="eyebrow">ЕСТЬ ИДЕЯ?</span><p>Сотрудничество и реклама</p></div><a class="contact-email" href="{{contact-mailto}}"><span>{{contact-email}}</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><button type="button" class="copy-email" data-copy-email="{{contact-email}}" aria-label="Скопировать почту для сотрудничества">Копировать</button></div>
+        {{analytics-privacy}}
         <div class="footer-bottom"><a href="#" class="footer-wordmark" aria-label="WENSDAY — наверх">WENSDAY<svg aria-hidden="true"><use href="#i-star"/></svg></a><span>© 2026 Андрей Середа</span><a class="back-top" href="#">Наверх ↑</a></div>
       </div>
     </footer>

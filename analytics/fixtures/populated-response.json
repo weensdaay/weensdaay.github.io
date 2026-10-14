@@ -1,0 +1,28 @@
+{
+  "project": "wensday",
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-14T08:00:01.000Z",
+  "collectionStartedAt": "2026-10-14T08:00:00.000Z",
+  "summary": { "sessions": 2, "pageViews": 3, "outboundClicks": 2, "engagedSessions": 2 },
+  "timeseries": [
+    { "date": "2026-10-08", "sessions": 0, "pageViews": 0, "outboundClicks": 0 },
+    { "date": "2026-10-09", "sessions": 0, "pageViews": 0, "outboundClicks": 0 },
+    { "date": "2026-10-10", "sessions": 0, "pageViews": 0, "outboundClicks": 0 },
+    { "date": "2026-10-11", "sessions": 0, "pageViews": 0, "outboundClicks": 0 },
+    { "date": "2026-10-12", "sessions": 0, "pageViews": 0, "outboundClicks": 0 },
+    { "date": "2026-10-13", "sessions": 0, "pageViews": 0, "outboundClicks": 0 },
+    { "date": "2026-10-14", "sessions": 2, "pageViews": 3, "outboundClicks": 2 }
+  ],
+  "sources": [
+    { "source": "instagram", "account": "life", "name": "Instagram · жизнь", "sessions": 1 },
+    { "source": "youtube", "account": "music", "name": "YouTube · музыка", "sessions": 1 }
+  ],
+  "destinations": [
+    { "id": "contact-email", "name": "Сотрудничество · email", "clicks": 1 },
+    { "id": "telegram", "name": "Telegram", "clicks": 1 }
+  ],
+  "countries": [{ "code": "ID", "sessions": 1 }, { "code": "US", "sessions": 1 }],
+  "devices": [{ "name": "desktop", "sessions": 1 }, { "name": "mobile", "sessions": 1 }],
+  "landingPages": [{ "path": "/", "views": 1 }, { "path": "/en/", "views": 1 }],
+  "actions": [{ "name": "scroll-50", "events": 1 }, { "name": "section-music", "events": 1 }]
+}

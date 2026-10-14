@@ -6,3 +6,6 @@ playwright-report/
 *.log
 .env*
 .stats-output/
+
+.wrangler/
+.dev.vars*

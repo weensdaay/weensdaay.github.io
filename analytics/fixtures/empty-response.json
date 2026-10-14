@@ -1,0 +1,22 @@
+{
+  "project": "wensday",
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-14T08:00:00.000Z",
+  "collectionStartedAt": null,
+  "summary": { "sessions": 0, "pageViews": 0, "outboundClicks": 0, "engagedSessions": 0 },
+  "timeseries": [
+    { "date": "2026-10-08", "sessions": 0, "pageViews": 0, "outboundClicks": 0 },
+    { "date": "2026-10-09", "sessions": 0, "pageViews": 0, "outboundClicks": 0 },
+    { "date": "2026-10-10", "sessions": 0, "pageViews": 0, "outboundClicks": 0 },
+    { "date": "2026-10-11", "sessions": 0, "pageViews": 0, "outboundClicks": 0 },
+    { "date": "2026-10-12", "sessions": 0, "pageViews": 0, "outboundClicks": 0 },
+    { "date": "2026-10-13", "sessions": 0, "pageViews": 0, "outboundClicks": 0 },
+    { "date": "2026-10-14", "sessions": 0, "pageViews": 0, "outboundClicks": 0 }
+  ],
+  "sources": [],
+  "destinations": [],
+  "countries": [],
+  "devices": [],
+  "landingPages": [],
+  "actions": []
+}

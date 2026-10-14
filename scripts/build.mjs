@@ -4,6 +4,8 @@ import { fileURLToPath } from 'node:url';
 import config from '../site.config.mjs';
 import media from '../media.config.mjs';
 import translations from '../translations.mjs';
+import analytics from '../analytics.config.mjs';
+import {analyticsCatalog,destinationID} from './analytics-catalog.mjs';
 import {renderStats} from './render-stats.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -78,6 +80,8 @@ for (const url of [config.origin, config.telegram, ...Object.values(config.proje
 let html = await fs.readFile(path.join(root,'src/index.html'), 'utf8');
 const tokens = {
   'public-stats': '<!--PUBLIC-STATS-->',
+  'analytics-privacy': analytics.endpoint ? '<details class="analytics-privacy"><summary>Конфиденциальность</summary><p>Считаем посещения и переходы по кнопкам: платформа, страна, тип устройства. Без cookies, записи экрана и имён. IP-адреса не сохраняем. Случайный номер визита живёт до 30 минут бездействия, максимум 4 часа; история событий — 90 дней. Страна определяется по соединению и может отражать VPN. Для сбора используем Cloudflare. Сигналы Do Not Track и Global Privacy Control учитываются.</p><button type="button" data-analytics-opt-out data-enabled="Отключить статистику в этом браузере" data-disabled="Статистика отключена · включить со следующего открытия" aria-pressed="false">Отключить статистику в этом браузере</button></details>' : '',
+  'analytics-connect': analytics.endpoint ? ` ${esc(new URL(analytics.endpoint).origin)}` : '',
   title: esc(config.title), description: esc(config.description), origin: esc(config.origin),
   'contact-email': esc(config.contact.email),
   'contact-mailto': `mailto:${esc(config.contact.email)}?subject=${encodeURIComponent(config.contact.subject)}`,
@@ -107,8 +111,17 @@ html = html.replace(/\{\{([a-z-]+)\}\}/g, (_, key) => {
   if (!(key in tokens)) throw new Error(`Unknown template token: ${key}`);
   return tokens[key];
 }).replace(/[ \t]+$/gm,'');
+if (analytics.endpoint && (!validUrl(analytics.endpoint) || new URL(analytics.endpoint).pathname !== '/v1/events')) throw new Error('Invalid analytics endpoint');
+// Stable destination IDs also survive cloning the infinite quick-link carousel.
+const trackedLinks = html => html.replace(/<a\b([^>]*?)href="([^"]+)"([^>]*)>/g,(match,before,href,after)=>{
+  const id=destinationID(href.replaceAll('&amp;','&'));
+  return id ? `<a${before}href="${href}"${after} data-track="${esc(id)}">` : match;
+});
+html=trackedLinks(html);
 await fs.mkdir(output, {recursive:true});
-await fs.writeFile(path.join(output,'index.html'),html.replace('<!--PUBLIC-STATS-->',renderStats(stats,'ru')));
+await fs.writeFile(path.join(output,'analytics-settings.mjs'),`export default ${JSON.stringify(analytics)};\n`);
+await fs.writeFile(path.join(root,'analytics/catalog.json'),JSON.stringify(analyticsCatalog,null,2)+'\n');
+await fs.writeFile(path.join(output,'index.html'),html.replace('<!--PUBLIC-STATS-->',trackedLinks(renderStats(stats,'ru'))));
 let englishHtml = html;
 for (const [ru,en] of Object.entries(translations).sort((a,b)=>b[0].length-a[0].length)) {
   englishHtml = englishHtml.replaceAll(ru.includes('<br>') ? ru : esc(ru), en.includes('<br>') ? en : esc(en));
@@ -120,9 +133,9 @@ englishHtml = englishHtml.replace('<html lang="ru">','<html lang="en">')
   .replaceAll(encodeURIComponent(config.contact.subject),encodeURIComponent('WENSDAY — collaborations and advertising'))
   .replaceAll('"./','"../');
 await fs.mkdir(path.join(output,'en'),{recursive:true});
-await fs.writeFile(path.join(output,'en/index.html'),englishHtml.replace('<!--PUBLIC-STATS-->',renderStats(stats,'en')));
+await fs.writeFile(path.join(output,'en/index.html'),englishHtml.replace('<!--PUBLIC-STATS-->',trackedLinks(renderStats(stats,'en'))));
 await fs.writeFile(path.join(output,'stats.json'),JSON.stringify(stats)+'\n');
-await Promise.all(['styles.css','app.js','locale.js','stats.js','stats-model.mjs','favicon.svg','social-preview.svg'].map(name => fs.copyFile(path.join(root,'src',name),path.join(output,name))));
+await Promise.all(['styles.css','app.js','locale.js','analytics.js','analytics-model.mjs','stats.js','stats-model.mjs','favicon.svg','social-preview.svg'].map(name => fs.copyFile(path.join(root,'src',name),path.join(output,name))));
 await fs.cp(path.join(root,'assets'),path.join(output,'assets'),{recursive:true});
 await fs.writeFile(path.join(output,'.nojekyll'),'');
 await fs.writeFile(path.join(output,'robots.txt'),`User-agent: *\nAllow: /\nSitemap: ${config.origin}/sitemap.xml\n`);

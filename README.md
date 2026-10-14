@@ -75,3 +75,13 @@ The `#numbers` section shows public follower counts, lifetime YouTube views, and
 Development: `node scripts/collect-stats.mjs` writes ignored `.stats-output/` files; it never publishes. `node scripts/publish-stats.mjs` is restricted to this repository's trusted main-branch workflow context. The public data branch is separate from the existing GitHub Pages `/docs` deployment.
 
 GitHub scheduling is best effort, can be delayed, and may be disabled after 60 days without repository activity. The dates/stale states expose this; the website does not promise real-time or uninterrupted statistics. See [scheduled workflow limits](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule).
+
+## Private website analytics · 67 Control
+
+The public site and public social-account counters remain static and separate from private website analytics. `analytics/` contains a Cloudflare Worker + D1 collector; `analytics.config.mjs` enables the tiny local browser client only after a real endpoint is deployed. Currently the endpoint is `null`: **visitor collection is not enabled yet**.
+
+67 Control 0.5.0 adds WENSDAY overview, source/account attribution, countries, coarse devices, outgoing destinations, section/scroll actions, and nine profile links to copy. Use a different tagged link in each bio to identify the specific account. Referrers alone often disappear in social apps. No names, raw IPs, full user agents, full referrer URLs, screen recording, social credentials or persistent visitor IDs are stored. Session IDs expire after30min idle/4h total. Events expire after90days. DNT/GPC and the optional footer opt-out stop collection.
+
+See `analytics/README.md` for deployment, API contract and security limits. Read secrets belong only in the Worker and native Keychain; never put them in this repository, Pages, URL query parameters or client JavaScript. New deployments require an authorized Cloudflare connection. The prepared collector has not been published while that authorization is pending.
+
+Validation: `node --test tests/*.test.mjs analytics/worker.test.mjs`. Worker bundling can be checked with `wrangler deploy --dry-run --config analytics/wrangler.json`; this does not deploy.
