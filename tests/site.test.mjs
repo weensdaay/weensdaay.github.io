@@ -17,11 +17,11 @@ test('published HTML has every configured live link, with safe external navigati
   assert.doesNotMatch(html,/\{\{[a-z-]+\}\}/);
 });
 test('unfinished destinations remain honest buttons, never fabricated links',()=>{
-  assert.equal(config.telegram,null,'User requested no Telegram destination until supplied');
-  assert.match(html,/<button[^>]+data-soon="Telegram"/);
-  assert.doesNotMatch(html,/href="https:\/\/t.me\//);
+  assert.equal(config.telegram,'https://t.me/weensdaay1');
+  assert.doesNotMatch(html,/data-soon="Telegram"/);
+  assert.equal((html.match(/href="https:\/\/t.me\/weensdaay1"/g)||[]).length,4);
   assert.doesNotMatch(html,/href="(?:javascript:|#soon|https?:\/\/localhost)/);
-  assert.equal((html.match(/data-soon="Telegram"/g)||[]).length,4);
+  assert.match(html,/data-soon="Instagram"/);
   assert.match(html,/<dialog[^>]+aria-labelledby="soon-title"/);
 });
 test('all public relative assets and anchor destinations exist',async()=>{

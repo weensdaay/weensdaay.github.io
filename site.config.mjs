@@ -4,7 +4,7 @@ export default {
   origin: 'https://weensdaay.github.io',
   title: 'WENSDAY — понимать больше, видеть дальше',
   description: 'Научпоп, путешествия, музыка Andry Wednesday и проекты Андрея Середы. Всё моё творчество — в одном месте.',
-  telegram: null,
+  telegram: 'https://t.me/weensdaay1',
   contact: {
     email: 'comet-ode.9d@icloud.com',
     subject: 'WENSDAY — сотрудничество и реклама'

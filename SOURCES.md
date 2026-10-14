@@ -16,7 +16,7 @@
 - https://www.tiktok.com/@weensdaay — основной TikTok.
 - https://www.instagram.com/weensdaay/ — путешествия и личный блог.
 - https://www.youtube.com/@wensdayblog — влоги.
-- Telegram не указан по прямому пожеланию автора: окончательная ссылка будет предоставлена отдельно.
+- https://t.me/weensdaay1 — основной Telegram, ссылка предоставлена автором 14 октября 2026.
 
 ## Музыка
 
