@@ -37,6 +37,7 @@ export default {
   projects: {
     hundred: null,
     continuum: null,
-    bali: null
+    bali: null,
+    iconbeast: 'https://iconbeast.org/'
   }
 };

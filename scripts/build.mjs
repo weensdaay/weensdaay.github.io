@@ -61,6 +61,7 @@ const quickLinks = [
   {name:'The Hundred',icon:'star',url:config.projects.hundred,detail:'Искусство на шлемах'},
   {name:'Continuum',icon:'star',url:config.projects.continuum,detail:'Пространство для целей'},
   {name:'Bali Trips',icon:'arrow',url:config.projects.bali,detail:'Путешествия по Бали'},
+  {name:'IconBeast',icon:'star',url:config.projects.iconbeast,detail:'Студия иконок для приложений'},
   {name:'Сотрудничество и реклама',icon:'mail',url:mailto,detail:config.contact.email},
   ...media.albums.map(item => ({...item,name:item.title,icon:'music',detail:'Andry Wednesday · релиз'})),
   ...media.science.map(item => ({...item,name:item.title,icon:item.platform === 'tiktok' ? 'tiktok' : 'youtube',detail:item.platform === 'tiktok' ? 'TikTok · научпоп' : 'YouTube · научпоп'})),
@@ -106,6 +107,7 @@ const tokens = {
   'project-hundred': project('hundred', 'The Hundred'),
   'project-continuum': project('continuum', 'Continuum'),
   'project-bali': project('bali', 'Bali Trips'),
+  'project-iconbeast': project('iconbeast', 'IconBeast'),
 };
 html = html.replace(/\{\{([a-z-]+)\}\}/g, (_, key) => {
   if (!(key in tokens)) throw new Error(`Unknown template token: ${key}`);

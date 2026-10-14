@@ -1,5 +1,10 @@
 // English copy for the static /en/ page. Keep release and channel identities intact.
 export default {
+  'APP / ДИЗАЙН':'APP / DESIGN',
+  'Логотип IconBeast':'IconBeast logo',
+  'Студия иконок для приложений':'App icon studio',
+  'Одна картинка — иконки для всех платформ.':'One image. Icons for every platform.',
+  'Создать, примерить, экспортировать.':'Create, preview, export.',
   'Конфиденциальность':'Privacy',
   'Считаем посещения и переходы по кнопкам: платформа, страна, тип устройства. Без cookies, записи экрана и имён. IP-адреса не сохраняем. Случайный номер визита живёт до 30 минут бездействия, максимум 4 часа; история событий — 90 дней. Страна определяется по соединению и может отражать VPN. Для сбора используем Cloudflare. Сигналы Do Not Track и Global Privacy Control учитываются.':'We count visits and link clicks by source, country and device type. No cookies, screen recordings or names. We do not store IP addresses. A random visit ID expires after 30 minutes of inactivity, or 4 hours at most; events are kept for 90 days. Country is inferred from the connection and may reflect a VPN. Collection uses Cloudflare. We respect Do Not Track and Global Privacy Control.',
   'Отключить статистику в этом браузере':'Disable analytics in this browser',
