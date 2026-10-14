@@ -80,3 +80,19 @@ TikTok: научпоп с публичной ленты @weensdaay. Прямые
 - `assets/more-vlog-minsk-sea.webp`: https://www.youtube.com/watch?v=FjnBndpCJBY
 
 `manrope.woff2` — тот же локальный Manrope из `manrope.ttf`, без изменения глифов, сжат fontTools в WOFF2 для уменьшения загрузки на мобильных устройствах.
+
+## Public statistics — 2026-10-14
+
+Anonymous HTTPS reads, no browser session, cookies or social API credentials:
+
+- [YouTube science / about](https://www.youtube.com/@weensdaay/about?hl=en): channel `UC-PcG5zMUaPRFBxMl1PZXmA`; initially 115K subscribers (rounded), 75,701,116 lifetime views.
+- [YouTube vlogs / about](https://www.youtube.com/@wensdayblog/about?hl=en): `UCHQgeXkN6mRV0bERKahlPIQ`; initially 887 subscribers, 132,643 views.
+- [Andry Wednesday – Topic / about](https://www.youtube.com/channel/UCB7PPfULSbQjRlmmxXJETGA/about?hl=en): 4 subscribers, 256 views.
+- [Instagram](https://www.instagram.com/weensdaay/): public `og:description`, 1,713 followers. Identity includes `(@weensdaay)`, sometimes HTML-encoded.
+- [Telegram](https://t.me/weensdaay1): `.tgme_page_extra`, 1 subscriber; identity verified from `al:ios:url`.
+- TikTok `@weensdaay` and `@bed1guy`: anonymous GET currently returns a WAF challenge. No attempt to solve or bypass it; counts unavailable. If the public HTML later includes profile JSON, its handle must match the configured identity.
+- YouTube `@wensday3151`: anonymous `/about` and main page returned 404. No similar channel substituted.
+
+YouTube data is extracted as JSON from `ytInitialData`, not evaluated as JavaScript; both channel metadata and the about model must match a reviewed channel ID. This is public HTML extraction, not a guaranteed API contract.
+
+[YouTube subscriber rounding](https://support.google.com/youtube/answer/6051134?hl=en), [channel resource semantics](https://developers.google.com/youtube/v3/docs/channels), [owner-authorized Analytics reports](https://developers.google.com/youtube/analytics/channel_reports), [date-range query and authorization](https://developers.google.com/youtube/analytics/reference/reports/query).

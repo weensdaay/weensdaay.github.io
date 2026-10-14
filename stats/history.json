@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "accounts": [
+    {
+      "id": "youtube-science",
+      "samples": [
+        {
+          "at": "2026-10-14T02:44:32.809Z",
+          "followers": 115000,
+          "rounded": true,
+          "views": 75701116
+        }
+      ]
+    },
+    {
+      "id": "tiktok-science",
+      "samples": []
+    },
+    {
+      "id": "instagram-life",
+      "samples": [
+        {
+          "at": "2026-10-14T02:44:32.809Z",
+          "followers": 1713,
+          "rounded": false,
+          "views": null
+        }
+      ]
+    },
+    {
+      "id": "youtube-life",
+      "samples": [
+        {
+          "at": "2026-10-14T02:44:32.809Z",
+          "followers": 887,
+          "rounded": false,
+          "views": 132643
+        }
+      ]
+    },
+    {
+      "id": "tiktok-life",
+      "samples": []
+    },
+    {
+      "id": "telegram",
+      "samples": [
+        {
+          "at": "2026-10-14T02:44:32.809Z",
+          "followers": 1,
+          "rounded": false,
+          "views": null
+        }
+      ]
+    },
+    {
+      "id": "youtube-archive",
+      "samples": []
+    },
+    {
+      "id": "youtube-music",
+      "samples": [
+        {
+          "at": "2026-10-14T02:44:32.809Z",
+          "followers": 4,
+          "rounded": false,
+          "views": 256
+        }
+      ]
+    }
+  ]
+}

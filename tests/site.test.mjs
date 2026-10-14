@@ -19,7 +19,7 @@ test('published HTML has every configured live link, with safe external navigati
 test('unfinished destinations remain honest buttons, never fabricated links',()=>{
   assert.equal(config.telegram,'https://t.me/weensdaay1');
   assert.doesNotMatch(html,/data-soon="Telegram"/);
-  assert.equal((html.match(/href="https:\/\/t.me\/weensdaay1"/g)||[]).length,4);
+  assert.equal((html.match(/href="https:\/\/t.me\/weensdaay1"/g)||[]).length,5);
   assert.doesNotMatch(html,/href="(?:javascript:|#soon|https?:\/\/localhost)/);
   assert.match(html,/data-soon="Instagram"/);
   assert.match(html,/<dialog[^>]+aria-labelledby="soon-title"/);

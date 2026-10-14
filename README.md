@@ -58,3 +58,20 @@ npm run preview
 ## Права на материалы
 
 Публичный репозиторий не передаёт права на фотографии, произведения, музыку или бренд. См. `SOURCES.md`. Шрифт Manrope распространяется по SIL Open Font License, лицензия включена в `assets/Manrope-OFL.txt`.
+
+## Public statistics
+
+The `#numbers` section shows public follower counts, lifetime YouTube views, and changes over 7/365 days when historical baselines exist. It is available in Russian and English. It never labels subscriptions as unique people. Counts missing from public pages are unavailable, not zero. Public rounding remains marked `≈`.
+
+- `stats/accounts.mjs`: reviewed identities and source links (remote data cannot change these).
+- `stats/history.json` / `stats/snapshot.json`: checked-in starting snapshot and static fallback.
+- `scripts/collect-stats.mjs`: anonymous, bounded HTTPS GETs; no social logins, keys, cookies, JavaScript challenges or authenticated fallback. One request per profile per run. Public HTML formats and anonymous availability can change.
+- `.github/workflows/public-statistics.yml`: daily at 03:41 UTC (11:41 Bali), also on relevant main-branch updates and manual dispatch. Collection has read permission; a separate publication job gets GitHub's short-lived repository job token. No personal access token or social-account secret is configured.
+- `scripts/publish-stats.mjs`: validates the artifact and merges with authoritative history before atomically writing only `stats.json` and `history.json` on the `public-metrics` branch. It never edits `main` or site links. GitHub's `contents: write` permission is repository-wide; the script restricts its own destinations, and no untrusted PR/event can launch it.
+- The site reads the public JSON from that branch when the section nears the viewport. Only validated numbers and timestamps reach `textContent`; no remote labels, links, scripts or markup are accepted. The section is usable without JavaScript from the dated fallback.
+- Records older than 48 hours are excluded from totals; their last-known per-account values retain the observation date and stale label. Failure does not erase historical baselines. At most 400 daily observations per account are retained.
+- A 7/365-day result is a change in a public cumulative counter on matching UTC dates, not private Analytics. Missing baselines, counter decreases and unavailable/stale sources produce a dash. Do not backfill or extrapolate historical views from today's lifetime total. Streaming listeners/likes are not added to video views.
+
+Development: `node scripts/collect-stats.mjs` writes ignored `.stats-output/` files; it never publishes. `node scripts/publish-stats.mjs` is restricted to this repository's trusted main-branch workflow context. The public data branch is separate from the existing GitHub Pages `/docs` deployment.
+
+GitHub scheduling is best effort, can be delayed, and may be disabled after 60 days without repository activity. The dates/stale states expose this; the website does not promise real-time or uninterrupted statistics. See [scheduled workflow limits](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule).
