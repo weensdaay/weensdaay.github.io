@@ -674,3 +674,5 @@ All photographs are stored locally. Historic images do not guarantee current con
 - Date: 2025
 - Original: https://unsplash.com/photos/3-Gqng4nm3I
 - Licence: Unsplash License — https://unsplash.com/license
+
+The responsive cover /images/penida-cover-800.webp is a resized version of /images/penida.webp by Paolo Nicolello (Unsplash), prepared 2026-11-27.
